@@ -20,10 +20,12 @@ namespace ScreamJam
         public bool hiding;
         public bool maxSpeed;
 
+        public int groundLayer;
         public int playerLayer;
         public int stairLayer;
         public int hideLayer;
         public int itemLayer;
+        public LayerMask groundLayerMask;
         public LayerMask playerLayerMask;
         public LayerMask stairLayerMask;
         public LayerMask hideLayerMask;

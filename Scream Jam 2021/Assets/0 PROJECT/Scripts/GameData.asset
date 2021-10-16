@@ -85,10 +85,14 @@ MonoBehaviour:
   usingStair: 0
   hiding: 0
   maxSpeed: 0
+  groundLayer: 3
   playerLayer: 6
   stairLayer: 7
   hideLayer: 8
   itemLayer: 9
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 64
