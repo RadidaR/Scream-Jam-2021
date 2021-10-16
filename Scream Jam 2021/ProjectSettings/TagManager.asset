@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Upper
+  - Lower
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Player
+  - Stairs
+  - Hide
+  - Item
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Distant Background
+    uniqueID: 1196247807
+    locked: 0
+  - name: Mid Background
+    uniqueID: 46614349
+    locked: 0
+  - name: Close Background
+    uniqueID: 2691786307
+    locked: 0
+  - name: Floor
+    uniqueID: 3700434409
+    locked: 0
+  - name: Player
+    uniqueID: 3376243671
+    locked: 0
+  - name: Forefront
+    uniqueID: 3341245221
+    locked: 0
+  - name: Near Forefront
+    uniqueID: 3699487413
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,510 @@
+fileFormatVersion: 2
+guid: c67c7fe29e6a83e4fae05ec80f86dc3d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: revenant_top_hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 70
+      y: 1901
+      width: 73
+      height: 71
+    spriteID: 74de793c7acb0894fbf35364d8aebb6a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -441, y: 1753}
+  - name: revenant_cross
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1730
+      width: 157
+      height: 163
+    spriteID: 482e9e68244c45a4497b6d9a89fa5a55
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -490, y: 1593}
+  - name: revenant_top_forearm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 1102
+      width: 125
+      height: 154
+    spriteID: 01dc3904e3a6c8c439e109a2bc39f6bc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -39, y: 941}
+  - name: revenant_top_arm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 270
+      y: 1570
+      width: 49
+      height: 145
+    spriteID: 1b39b83b3b80a6941a9d1314a5ce443c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -178, y: 1279}
+  - name: revenant_hat
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 739
+      height: 597
+    spriteID: 7fcfe4ebb91751143a5c970e8f47552d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -80, y: -470}
+  - name: revenant_beard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1570
+      width: 258
+      height: 152
+    spriteID: ddf575ca6d789944ebdfd218f9fea747
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -392, y: 1148}
+  - name: revenant_head
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1102
+      width: 409
+      height: 460
+    spriteID: 5633eecb4729a294bbf38ff2fa9176cc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -245, y: 613}
+  - name: revenant_body
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 609
+      width: 554
+      height: 485
+    spriteID: 00a7d855e95411746a2ca4295d81ffc8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -251, y: 571}
+  - name: revenant_top_foot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 1506
+      width: 119
+      height: 27
+    spriteID: 635a2f6f7901e924e9b8f94fd5b9e9f9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 8, y: 1481}
+  - name: revenant_bottom_foot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 169
+      y: 1730
+      width: 346
+      height: 22
+    spriteID: f55045a341740294a93198ed950ca310
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -254, y: 1699}
+  - name: revenant_bottom_hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 1399
+      width: 81
+      height: 99
+    spriteID: fea1623e4b61d3b46a8205708327c9f4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -239, y: 1239}
+  - name: revenant_bottom_forearm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 1264
+      width: 102
+      height: 127
+    spriteID: 4f9fbac7dfc2dd44798920eb85f97822
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -186, y: 1037}
+  - name: revenant_bottom_arm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1901
+      width: 58
+      height: 110
+    spriteID: e9ccc886bf8180f4c901c39586a5d599
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -577, y: 1575}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 1008, y: 1232}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 2048
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: revenant_top_hand
+    spriteName: revenant_top_hand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 74de793c7acb0894fbf35364d8aebb6a
+    layerID: 0
+    mosaicPosition: {x: 70, y: 1901}
+  - name: revenant_cross
+    spriteName: revenant_cross
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 482e9e68244c45a4497b6d9a89fa5a55
+    layerID: -835260630
+    mosaicPosition: {x: 4, y: 1730}
+  - name: revenant_top_forearm
+    spriteName: revenant_top_forearm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 01dc3904e3a6c8c439e109a2bc39f6bc
+    layerID: -93529390
+    mosaicPosition: {x: 421, y: 1102}
+  - name: revenant_top_arm
+    spriteName: revenant_top_arm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1b39b83b3b80a6941a9d1314a5ce443c
+    layerID: -570522188
+    mosaicPosition: {x: 270, y: 1570}
+  - name: revenant_hat
+    spriteName: revenant_hat
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7fcfe4ebb91751143a5c970e8f47552d
+    layerID: -1017802277
+    mosaicPosition: {x: 4, y: 4}
+  - name: revenant_beard
+    spriteName: revenant_beard
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ddf575ca6d789944ebdfd218f9fea747
+    layerID: 1487238748
+    mosaicPosition: {x: 4, y: 1570}
+  - name: revenant_head
+    spriteName: revenant_head
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5633eecb4729a294bbf38ff2fa9176cc
+    layerID: 565834108
+    mosaicPosition: {x: 4, y: 1102}
+  - name: revenant_body
+    spriteName: revenant_body
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 00a7d855e95411746a2ca4295d81ffc8
+    layerID: 1526861622
+    mosaicPosition: {x: 4, y: 609}
+  - name: revenant_top_foot
+    spriteName: revenant_top_foot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 635a2f6f7901e924e9b8f94fd5b9e9f9
+    layerID: -926855226
+    mosaicPosition: {x: 421, y: 1506}
+  - name: revenant_bottom_foot
+    spriteName: revenant_bottom_foot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f55045a341740294a93198ed950ca310
+    layerID: -661696702
+    mosaicPosition: {x: 169, y: 1730}
+  - name: revenant_bottom_hand
+    spriteName: revenant_bottom_hand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fea1623e4b61d3b46a8205708327c9f4
+    layerID: 1589996461
+    mosaicPosition: {x: 421, y: 1399}
+  - name: revenant_bottom_forearm
+    spriteName: revenant_bottom_forearm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4f9fbac7dfc2dd44798920eb85f97822
+    layerID: -413306698
+    mosaicPosition: {x: 421, y: 1264}
+  - name: revenant_bottom_arm
+    spriteName: revenant_bottom_arm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e9ccc886bf8180f4c901c39586a5d599
+    layerID: -1827957416
+    mosaicPosition: {x: 4, y: 1901}
+  sharedRigPSDLayers: []
+  generateGOHierarchy: 0
+  textureAssetName: Reverant Texture
+  prefabAssetName: Reverant Prefab
+  spriteLibAssetName: Reverant Sprite Lib
+  skeletonAssetName: Reverant Skeleton
+  secondarySpriteTextures: []
