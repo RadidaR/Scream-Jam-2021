@@ -80,7 +80,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   canGoUp: 0
-  canGoDown: 1
+  canGoDown: 0
   canHide: 0
   usingStair: 0
   hiding: 0
@@ -106,4 +106,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   getToStairTime: 0.2
-  useStairTime: 0

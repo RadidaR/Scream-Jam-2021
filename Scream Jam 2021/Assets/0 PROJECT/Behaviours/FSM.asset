@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: FSM
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedBT":{"_value":1},"_name":"Chase
+    Target","_position":{"x":169.0,"y":134.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"0"},{"_nestedBT":{"_value":2},"_name":"Patrol","_position":{"x":414.0,"y":307.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"1"}],"connections":[{"_condition":{"valueA":{"_name":"hasTarget","_targetVariableID":"cdc56ccc-5989-4408-9247-9a23ab918a6f"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: c9a2b6390a6f0ea44805903cd435dc24, type: 2}
+  - {fileID: 11400000, guid: fe335cf2e09c4d64aa0ca6458b77297a, type: 2}
+  _graphSource:
+    _version: 3.21
+    _category: 
+    _comments: 
+    _translation: {x: 304.99994, y: 24.999996}
+    _zoomFactor: 0.7500085
+  _haltSerialization: 0
