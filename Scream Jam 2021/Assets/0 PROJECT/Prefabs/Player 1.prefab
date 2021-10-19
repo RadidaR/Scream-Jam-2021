@@ -5482,7 +5482,7 @@ MonoBehaviour:
   m_Weight: 1
   m_Chain:
     m_EffectorTransform: {fileID: 46618075107179753}
-    m_TargetTransform: {fileID: 1716984240}
+    m_TargetTransform: {fileID: 0}
     m_TransformCount: 3
     m_Transforms:
     - {fileID: 6476107791330480548}

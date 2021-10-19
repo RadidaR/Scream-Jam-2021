@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: GhostFSM
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedBT":{"_value":1},"exitMode":1,"_name":"Patrol","_position":{"x":383.0,"y":294.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"0"},{"_nestedBT":{"_value":2},"_position":{"x":174.0,"y":118.0},"$type":"NodeCanvas.StateMachines.NestedBTState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: fe335cf2e09c4d64aa0ca6458b77297a, type: 2}
+  - {fileID: 11400000, guid: b56b57a51f333cd40be5fbfd38b68c7a, type: 2}
+  _graphSource:
+    _version: 3.21
+    _category: 
+    _comments: 
+    _translation: {x: 197, y: 102}
+    _zoomFactor: 1
+  _haltSerialization: 0

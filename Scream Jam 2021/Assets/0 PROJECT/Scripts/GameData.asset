@@ -79,17 +79,21 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  canGoUp: 0
+  canGoUp: 1
   canGoDown: 0
   canHide: 0
+  canStab: 0
   usingStair: 0
-  hiding: 0
   maxSpeed: 0
+  hiding: 0
+  stabbing: 0
   groundLayer: 3
   playerLayer: 6
   stairLayer: 7
   hideLayer: 8
   itemLayer: 9
+  ghostLayer: 10
+  stabLayer: 11
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -105,4 +109,10 @@ MonoBehaviour:
   itemLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  ghostLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  stabLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   getToStairTime: 0.2

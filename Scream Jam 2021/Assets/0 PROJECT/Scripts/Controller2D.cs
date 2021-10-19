@@ -22,6 +22,14 @@ namespace ScreamJam
         [SerializeField] Transform exorciseSpot;
         [SerializeField] float exorciseRadius;
 
+        bool canMove()
+        {
+            if (!data.usingStair && !data.stabbing)
+                return true;
+            else
+                return false;
+        }
+
         private void Awake()
         {
             boxCollider = GetComponent<BoxCollider2D>();
@@ -29,6 +37,8 @@ namespace ScreamJam
 
             player.input.UseStairs.performed += ctx => CheckForStairs();
             player.input.UseCross.performed += ctx => CheckForPossessions();
+
+            data.ResetValues();
         }
 
         private void FixedUpdate()
@@ -50,7 +60,7 @@ namespace ScreamJam
 
         void Move()
         {
-            if (data.usingStair)
+            if (!canMove())
                 return;
 
             if (Mathf.Sign(data.velocity) != Mathf.Sign(player.input.Move.ReadValue<float>()))
@@ -72,11 +82,15 @@ namespace ScreamJam
             Vector2 position = transform.position;
             position.x += data.velocity;
             transform.position = position;
+
+            Vector3 scale = transform.localScale;
+            scale.x = 1 * Mathf.Sign(player.input.Move.ReadValue<float>());
+            transform.localScale = scale;
         }
 
         void Stop()
         {
-            if (data.usingStair)
+            if (!canMove())
                 return;
 
             if (data.maxSpeed)
@@ -120,22 +134,15 @@ namespace ScreamJam
             Collider2D stairCollider = Physics2D.OverlapBox(colliderPosition, boxCollider.size, 0, data.stairLayerMask);
             Transform stairs = stairCollider.gameObject.transform.parent;
 
-            //Debug.Log(stairs.name);
-
             if (stairCollider != null)
             {
-                //if (stairCollider.gameObject.tag == "Upper")
-                //    Timing.RunCoroutine(_UseStairs(stairs, stairCollider.gameObject.transform.position, false));
-                //else if (stairCollider.gameObject.tag == "Lower")
-                //    Timing.RunCoroutine(_UseStairs(stairs, stairCollider.gameObject.transform.position, true));
-
                 Timing.RunCoroutine(_UseStairs(stairs), Segment.FixedUpdate);
             }
 
 
         }
 
-        IEnumerator<float> _UseStairs(Transform stairs)/*, Vector3 stairPosition, bool up)*/
+        IEnumerator<float> _UseStairs(Transform stairs)
         {
             data.usingStair = true;
             Transform upper = stairs.GetChild(0);
@@ -159,28 +166,35 @@ namespace ScreamJam
                     break;
             }
 
+            bool goingUp = false;
             if (data.canGoUp)
+            {
+                goingUp = true;
                 eClimb.Raise();
+            }
             else if (data.canGoDown)
+            {
+                goingUp = false;
                 eDrop.Raise();
+            }
 
             yield return Timing.WaitForSeconds(0.35f);
-            //GameObject top = upper.gameObject;
 
-            if (data.canGoUp)
+            if (goingUp)
             {
                 Vector3 newPos = upper.position;
                 newPos.y -= 2;
                 transform.position = newPos;
                 eReachTop.Raise();
             }
-            else if (data.canGoDown)
+            else
             {
                 Vector3 newPos = lower.position;
                 newPos.y += 8;
                 transform.position = newPos;
                 eReachBottom.Raise();
             }
+
             data.usingStair = false;
         }
 
@@ -210,6 +224,40 @@ namespace ScreamJam
             {
                 data.canHide = true;
             }
+            else if (collision.gameObject.layer == data.ghostLayer)
+            {
+                Debug.Log("Caught by ghost");
+            }
+            else if (collision.gameObject.layer == data.stabLayer)
+            {
+                data.canStab = true;
+            }
+        }
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == data.stairLayer)
+            {
+                if (collision.gameObject.tag == "Upper")
+                {
+                    data.canGoDown = true;
+                }
+                else if (collision.gameObject.tag == "Lower")
+                {
+                    data.canGoUp = true;
+                }
+            }
+            else if (collision.gameObject.layer == data.hideLayer)
+            {
+                data.canHide = true;
+            }
+            else if (collision.gameObject.layer == data.ghostLayer)
+            {
+                Debug.Log("Caught by ghost");
+            }
+            else if (collision.gameObject.layer == data.stabLayer)
+            {
+                data.canStab = true;
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -222,6 +270,10 @@ namespace ScreamJam
             else if (collision.gameObject.layer == data.hideLayer)
             {
                 data.canHide = false;
+            }
+            else if (collision.gameObject.layer == data.stabLayer)
+            {
+                data.canStab = false;
             }
         }     
 

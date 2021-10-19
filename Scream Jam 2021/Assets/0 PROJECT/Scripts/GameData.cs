@@ -32,15 +32,21 @@ namespace ScreamJam
         [VerticalGroup("Booleans/Split/Left")]
         [LabelWidth(80)]
         public bool canHide;
+        [VerticalGroup("Booleans/Split/Left")]
+        [LabelWidth(80)]
+        public bool canStab;
         [VerticalGroup("Booleans/Split/Right")]
         [LabelWidth(80)]
         public bool usingStair;
         [VerticalGroup("Booleans/Split/Right")]
         [LabelWidth(80)]
+        public bool maxSpeed;
+        [VerticalGroup("Booleans/Split/Right")]
+        [LabelWidth(80)]
         public bool hiding;
         [VerticalGroup("Booleans/Split/Right")]
         [LabelWidth(80)]
-        public bool maxSpeed;
+        public bool stabbing;
 
         [FoldoutGroup("Layers")]
         [HorizontalGroup("Layers/Split")]
@@ -64,6 +70,14 @@ namespace ScreamJam
         [LabelText("Item")]
         [LabelWidth(75)]
         public int itemLayer;
+        [VerticalGroup("Layers/Split/Left")]
+        [LabelText("Ghost")]
+        [LabelWidth(75)]
+        public int ghostLayer;
+        [VerticalGroup("Layers/Split/Left")]
+        [LabelText("Stab")]
+        [LabelWidth(75)]
+        public int stabLayer;
         [HideLabel]
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask groundLayerMask;
@@ -79,9 +93,27 @@ namespace ScreamJam
         [HideLabel]
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask itemLayerMask;
+        [HideLabel]
+        [VerticalGroup("Layers/Split/Right")]
+        public LayerMask ghostLayerMask;
+        [HideLabel]
+        [VerticalGroup("Layers/Split/Right")]
+        public LayerMask stabLayerMask;
 
         [FoldoutGroup("Stairs")]
         [LabelWidth(100)]
         public float getToStairTime;
+
+        public void ResetValues()
+        {
+            canGoUp = false;
+            canGoDown = false;
+            canHide = false;
+            canStab = false;
+            usingStair = false;
+            maxSpeed = false;
+            hiding = false;
+            stabbing = false;
+        }
     }
 }
