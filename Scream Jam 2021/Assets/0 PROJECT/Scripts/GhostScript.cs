@@ -4,18 +4,35 @@ using UnityEngine;
 using SensorToolkit;
 //using ParadoxNotion;
 using NodeCanvas.BehaviourTrees;
+using MEC;
 
 namespace ScreamJam
 {
+    public enum GhostState
+    {
+        Patrolling,
+        Chasing,
+        LostTarget
+    }
+
     public class GhostScript : MonoBehaviour
     {
         //BehaviourTreeOwner ai;
         //NodeCanvas.BehaviourTrees
         Sensor sensor;
+
+        public GhostState state;
+        public GhostState State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
         //[SerializeField] bool hasSpottedPlayer;
         [SerializeField] GameData data;
         [SerializeField] Transform spotA;
         [SerializeField] Transform spotB;
+        GameObject player;
 
         public Transform PatrolSpotA { get { return spotA; } set { } }
         public Transform PatrolSpotB { get { return spotB; } set { } }
@@ -29,19 +46,6 @@ namespace ScreamJam
 
         public bool GoingToA { get { return goingToA; } set { goingToA = value; } }
 
-        //public Vector3 patrolSpotAPosition {
-        //    get
-        //    {
-        //        return patrolSpotA.position;
-        //    }
-        //}
-        //public Vector3 patrolSpotBPosition
-        //{
-        //    get
-        //    {
-        //        return patrolSpotB.position;
-        //    }
-        //}
 
         public bool hasTarget
         {
@@ -54,6 +58,20 @@ namespace ScreamJam
             }
         }
 
+        public bool lostTarget;
+        public bool LostTarget
+        {
+            get
+            {
+                return lostTarget;
+            }
+
+            set
+            {
+                lostTarget = value;
+            }
+        }
+
         public GameObject target;
         public GameObject Target
         {
@@ -61,11 +79,14 @@ namespace ScreamJam
             set { target = value; }
         }
 
+
+
         private void Awake()
         {
             sensor = GetComponent<Sensor>();
             spotA.parent = null;
             spotB.parent = null;
+            player = FindObjectOfType<Controller2D>().gameObject;
         }
 
         // Update is called once per frame
@@ -79,21 +100,34 @@ namespace ScreamJam
             else
                 Target = null;
 
-            if (hasTarget)
+            if (state == GhostState.Chasing)
             {
-                ChangeDirection(target.transform.position);
+                if (target != null)
+                    ChangeDirection(target.transform.position);
+            }
+            else if (state == GhostState.LostTarget)
+            {
+                if (player != null)
+                    ChangeDirection(player.transform.position);
             }
             else
             {
-                if (goingToA)
-                    ChangeDirection(spotA.position);
-                else
-                    ChangeDirection(spotB.position);
+                    if (goingToA)
+                        ChangeDirection(spotA.position);
+                    else
+                        ChangeDirection(spotB.position);
             }
+        }
 
+        public void DestroyGhost()
+        {
+            Timing.RunCoroutine(_GetDestroyed(), Segment.FixedUpdate);
+        }
 
-
-
+        IEnumerator<float> _GetDestroyed()
+        {
+            yield return Timing.WaitForOneFrame;
+            Destroy(gameObject, 0);
         }
 
         void ChangeDirection(Vector3 targetPosition)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MEC;
+using Sirenix.OdinInspector;
 
 namespace ScreamJam
 {
@@ -14,17 +15,25 @@ namespace ScreamJam
         float accelerationTime;
         float deccelerationTime;
 
+        [FoldoutGroup("Events")]
         [SerializeField] GameEvent eClimb;
+        [FoldoutGroup("Events")]
         [SerializeField] GameEvent eDrop;
+        [FoldoutGroup("Events")]
         [SerializeField] GameEvent eReachTop;
+        [FoldoutGroup("Events")]
         [SerializeField] GameEvent eReachBottom;
+        [FoldoutGroup("Events")]
+        [SerializeField] GameEvent eHide;
+        [FoldoutGroup("Events")]
+        [SerializeField] GameEvent eReveal;
 
         [SerializeField] Transform exorciseSpot;
-        [SerializeField] float exorciseRadius;
+        //[SerializeField] float exorciseRadius;
 
         bool canMove()
         {
-            if (!data.usingStair && !data.stabbing)
+            if (!data.usingStair && !data.stabbing && !data.hiding)
                 return true;
             else
                 return false;
@@ -36,7 +45,8 @@ namespace ScreamJam
             player = new PlayerInput();
 
             player.input.UseStairs.performed += ctx => CheckForStairs();
-            player.input.UseCross.performed += ctx => CheckForPossessions();
+            player.input.UseCross.performed += ctx => Exorcise();
+            player.input.Hide.performed += ctx => HideAndReveal();
 
             data.ResetValues();
         }
@@ -55,7 +65,8 @@ namespace ScreamJam
                     Stop();
             }
 
-            
+            if (data.inSight)
+                data.canHide = false;
         }
 
         void Move()
@@ -198,13 +209,93 @@ namespace ScreamJam
             data.usingStair = false;
         }
 
-        void CheckForPossessions()
+        void Exorcise()
         {
-            GameObject possessedItem = Physics2D.OverlapCircle(exorciseSpot.position, exorciseRadius, data.itemLayerMask).gameObject;
-            if (possessedItem != null)
+            if (data.usingStair || data.hiding)
+                return;
+
+            if (data.canStab)
             {
-                possessedItem.GetComponent<PossessedItem>().EndPossession();
+                GameObject stabZone = null;
+
+                if (Physics2D.OverlapCircle(transform.position, 1f, data.stabLayerMask))
+                    stabZone = Physics2D.OverlapCircle(transform.position, 1f, data.stabLayerMask).gameObject;
+
+                if (stabZone != null)
+                {
+                    Timing.RunCoroutine(_StabGhost(stabZone.gameObject), Segment.FixedUpdate);
+                }
             }
+            else
+            {
+                GameObject possessedItem = null;
+
+                if (Physics2D.OverlapCircle(exorciseSpot.position, data.exorciseRadius, data.itemLayerMask))
+                    possessedItem = Physics2D.OverlapCircle(exorciseSpot.position, data.exorciseRadius, data.itemLayerMask).gameObject;
+
+                if (possessedItem != null)
+                {
+                    possessedItem.GetComponent<PossessedItem>().EndPossession();
+                }
+            }
+        }
+
+        IEnumerator<float> _StabGhost(GameObject stabPosition)
+        {
+            data.stabbing = true;
+            float timer = 0;
+            Vector3 originalPosition = transform.position;
+            while (timer < data.getToGhostTime)
+            {
+                yield return Timing.WaitForSeconds(Time.fixedDeltaTime);
+                timer += Time.fixedDeltaTime;
+                transform.position = Vector3.Lerp(originalPosition, stabPosition.transform.position, timer / data.getToGhostTime);
+                if (timer >= data.getToGhostTime || transform.position == stabPosition.transform.position)
+                    break;
+            }
+
+            stabPosition.GetComponentInParent<GhostScript>().DestroyGhost();
+            data.stabbing = false;
+        }
+
+        void HideAndReveal()
+        {
+            GameObject hidingSpot = null;
+            if (Physics2D.OverlapBox(transform.position, boxCollider.size, 0, data.hideLayerMask))
+                hidingSpot = Physics2D.OverlapBox(transform.position, boxCollider.size, 0, data.hideLayerMask).gameObject;
+
+            if (!data.hiding)
+            {
+                if (!data.canHide)
+                    return;                
+
+                if (hidingSpot != null)
+                    Timing.RunCoroutine(_Hide(hidingSpot), Segment.FixedUpdate);
+            }
+            else
+            {
+                //PLAY hidingSpot.GetComponent<Animator>().Play();
+                data.hiding = false;
+                eReveal.Raise();
+            }
+        }
+
+        IEnumerator<float> _Hide(GameObject hidePosition)
+        {
+            float timer = 0;
+            Vector3 originalPosition = transform.position;
+            while (timer < data.getToHidingSpotTime)
+            {
+                yield return Timing.WaitForSeconds(Time.fixedDeltaTime);
+                timer += Time.fixedDeltaTime;
+                transform.position = Vector3.Lerp(originalPosition, hidePosition.transform.position, timer / data.getToHidingSpotTime);
+                if (timer >= data.getToHidingSpotTime || transform.position == hidePosition.transform.position)
+                    break;
+            }
+
+            data.canHide = false;
+            data.hiding = true;
+            eHide.Raise();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -222,7 +313,8 @@ namespace ScreamJam
             }
             else if (collision.gameObject.layer == data.hideLayer)
             {
-                data.canHide = true;
+                if (!data.inSight)
+                    data.canHide = true;
             }
             else if (collision.gameObject.layer == data.ghostLayer)
             {
@@ -231,6 +323,11 @@ namespace ScreamJam
             else if (collision.gameObject.layer == data.stabLayer)
             {
                 data.canStab = true;
+            }
+            else if (collision.gameObject.layer == data.sightLayer)
+            {
+                if (!data.hiding)
+                    data.inSight = true;
             }
         }
         private void OnTriggerStay2D(Collider2D collision)
@@ -248,7 +345,8 @@ namespace ScreamJam
             }
             else if (collision.gameObject.layer == data.hideLayer)
             {
-                data.canHide = true;
+                if (!data.inSight)
+                    data.canHide = true;
             }
             else if (collision.gameObject.layer == data.ghostLayer)
             {
@@ -258,8 +356,12 @@ namespace ScreamJam
             {
                 data.canStab = true;
             }
+            else if (collision.gameObject.layer == data.sightLayer)
+            {
+                if (!data.hiding)
+                    data.inSight = true;
+            }
         }
-
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.layer == data.stairLayer)
@@ -274,6 +376,10 @@ namespace ScreamJam
             else if (collision.gameObject.layer == data.stabLayer)
             {
                 data.canStab = false;
+            }
+            else if (collision.gameObject.layer == data.sightLayer)
+            {
+                data.inSight = false;
             }
         }     
 
@@ -291,8 +397,8 @@ namespace ScreamJam
         {
             Gizmos.color = Color.blue;
 
-            if (exorciseRadius > 0)
-                Gizmos.DrawWireSphere(exorciseSpot.position, exorciseRadius);
+            if (data.exorciseRadius > 0)
+                Gizmos.DrawWireSphere(exorciseSpot.position, data.exorciseRadius);
         }
     }
 }
