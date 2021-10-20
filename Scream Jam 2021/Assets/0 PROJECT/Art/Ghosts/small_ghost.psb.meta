@@ -1,0 +1,568 @@
+fileFormatVersion: 2
+guid: e411cdfc50455244eaa0b8eed4c82632
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: back_eye_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 909
+      width: 46
+      height: 43
+    spriteID: 96f03eaaea839e944a119744de91ee3e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 146, y: 262}
+  - name: blinking_back_eye_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 780
+      width: 46
+      height: 67
+    spriteID: 72c0b0d74c9ae4f45b3813ab1eff4fef
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 148, y: 131}
+  - name: blinking_back_eye_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 598
+      width: 52
+      height: 94
+    spriteID: d5fbe8d8fc1d708459f5bd83f9bf2081
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 153, y: -51}
+  - name: blinking_back_eye_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 356
+      width: 55
+      height: 119
+    spriteID: 0711af247d5badb46942e1d0b67d4233
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 156, y: -293}
+  - name: catching_back_eye
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 502
+      y: 212
+      width: 70
+      height: 156
+    spriteID: e56f8475f3d137f438af55e4cd227756
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 239, y: -426}
+  - name: blinking_front_eye_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 855
+      width: 47
+      height: 46
+    spriteID: d0d4ca02b2ddbd842a06d141b0fc8573
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 231, y: 216}
+  - name: blinking_front_eye_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 700
+      width: 52
+      height: 72
+    spriteID: 3941801504790b44f82e28497c33d137
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 236, y: 61}
+  - name: blinking_front_eye_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 483
+      width: 56
+      height: 107
+    spriteID: 71ecedaf3b7f9744e9bc35c9d7da6320
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 241, y: -157}
+  - name: blinking_front_eye_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 502
+      y: 376
+      width: 56
+      height: 135
+    spriteID: 08eb8f7a5e41dfe458ebae2549b802fc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 312, y: -261}
+  - name: catching_front_eye
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 581
+      y: 4
+      width: 72
+      height: 161
+    spriteID: d8457f4be42e19b45987375fc3738951
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 401, y: -623}
+  - name: ghost_wrinkle_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 502
+      y: 4
+      width: 71
+      height: 200
+    spriteID: d16235472fa27614db21b8eef7e44f0e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 425, y: -634}
+  - name: ghost_wrinkle_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 502
+      y: 519
+      width: 23
+      height: 308
+    spriteID: 909737c4a56e1304fa862c3239fd0fad
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 235, y: 173}
+  - name: ghost_wrinkle_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 533
+      y: 519
+      width: 26
+      height: 270
+    spriteID: eccedc04802314f48b5d302f3bb52ae1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 207, y: 396}
+  - name: ghost_wrinkle_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 4
+      width: 64
+      height: 344
+    spriteID: 74892c8a66d810145a6b340c400cf2a2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 402, y: -123}
+  - name: ghost_body
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 418
+      height: 907
+    spriteID: 2a91746309951ea4bbb8bb0547a10922
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
+  documentSize: {x: 418, y: 907}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 1024
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: back_eye_3
+    spriteName: back_eye_3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96f03eaaea839e944a119744de91ee3e
+    layerID: 0
+    mosaicPosition: {x: 430, y: 909}
+  - name: blinking_back_eye_2
+    spriteName: blinking_back_eye_2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 72c0b0d74c9ae4f45b3813ab1eff4fef
+    layerID: 1611691201
+    mosaicPosition: {x: 430, y: 780}
+  - name: blinking_back_eye_1
+    spriteName: blinking_back_eye_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d5fbe8d8fc1d708459f5bd83f9bf2081
+    layerID: 1611691204
+    mosaicPosition: {x: 430, y: 598}
+  - name: blinking_back_eye_0
+    spriteName: blinking_back_eye_0
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0711af247d5badb46942e1d0b67d4233
+    layerID: 1611691203
+    mosaicPosition: {x: 430, y: 356}
+  - name: catching_back_eye
+    spriteName: catching_back_eye
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e56f8475f3d137f438af55e4cd227756
+    layerID: 172494503
+    mosaicPosition: {x: 502, y: 212}
+  - name: blinking_front_eye_3
+    spriteName: blinking_front_eye_3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d0d4ca02b2ddbd842a06d141b0fc8573
+    layerID: -1911686252
+    mosaicPosition: {x: 430, y: 855}
+  - name: blinking_front_eye_2
+    spriteName: blinking_front_eye_2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3941801504790b44f82e28497c33d137
+    layerID: 817197103
+    mosaicPosition: {x: 430, y: 700}
+  - name: blinking_front_eye_1
+    spriteName: blinking_front_eye_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 71ecedaf3b7f9744e9bc35c9d7da6320
+    layerID: -748886838
+    mosaicPosition: {x: 430, y: 483}
+  - name: blinking_front_eye_0
+    spriteName: blinking_front_eye_0
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 08eb8f7a5e41dfe458ebae2549b802fc
+    layerID: 1979996517
+    mosaicPosition: {x: 502, y: 376}
+  - name: catching_front_eye
+    spriteName: catching_front_eye
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d8457f4be42e19b45987375fc3738951
+    layerID: -2099513963
+    mosaicPosition: {x: 581, y: 4}
+  - name: ghost_wrinkle_1
+    spriteName: ghost_wrinkle_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d16235472fa27614db21b8eef7e44f0e
+    layerID: -1348969634
+    mosaicPosition: {x: 502, y: 4}
+  - name: ghost_wrinkle_2
+    spriteName: ghost_wrinkle_2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 909737c4a56e1304fa862c3239fd0fad
+    layerID: -1348969631
+    mosaicPosition: {x: 502, y: 519}
+  - name: ghost_wrinkle_3
+    spriteName: ghost_wrinkle_3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: eccedc04802314f48b5d302f3bb52ae1
+    layerID: -1348969632
+    mosaicPosition: {x: 533, y: 519}
+  - name: ghost_wrinkle_4
+    spriteName: ghost_wrinkle_4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 74892c8a66d810145a6b340c400cf2a2
+    layerID: -1348969629
+    mosaicPosition: {x: 430, y: 4}
+  - name: ghost_body
+    spriteName: ghost_body
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2a91746309951ea4bbb8bb0547a10922
+    layerID: 235353522
+    mosaicPosition: {x: 4, y: 4}
+  sharedRigPSDLayers: []
+  generateGOHierarchy: 0
+  textureAssetName: small_ghost Texture
+  prefabAssetName: small_ghost Prefab
+  spriteLibAssetName: small_ghost Sprite Lib
+  skeletonAssetName: small_ghost Skeleton
+  secondarySpriteTextures: []
