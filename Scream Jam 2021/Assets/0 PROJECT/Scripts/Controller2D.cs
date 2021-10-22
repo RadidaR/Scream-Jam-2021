@@ -11,6 +11,12 @@ namespace ScreamJam
         [SerializeField] GameData data;
         PlayerInput player;
         BoxCollider2D boxCollider;
+        Animator anim;
+        [SerializeField] string currentAnimState;
+        [SerializeField] string idleAnim;
+        [SerializeField] string walkAnim;
+        [SerializeField] string exorAnim;
+        [SerializeField] string attackAnim;
 
         float accelerationTime;
         float deccelerationTime;
@@ -42,6 +48,7 @@ namespace ScreamJam
         private void Awake()
         {
             boxCollider = GetComponent<BoxCollider2D>();
+            anim = GetComponentInChildren<Animator>();
             player = new PlayerInput();
 
             player.input.UseStairs.performed += ctx => CheckForStairs();
@@ -73,6 +80,9 @@ namespace ScreamJam
         {
             if (!canMove())
                 return;
+
+            if (currentAnimState != exorAnim && currentAnimState != attackAnim)
+                ChangeAnimationState(walkAnim);
 
             if (Mathf.Sign(data.velocity) != Mathf.Sign(player.input.Move.ReadValue<float>()))
                 data.velocity = 0;
@@ -133,6 +143,9 @@ namespace ScreamJam
                 position.x += data.velocity;
                 transform.position = position;
             }
+
+            if (Mathf.Abs(data.velocity) < 0.05f)
+                ChangeAnimationState(idleAnim);
         }
 
         void CheckForStairs()
@@ -165,6 +178,8 @@ namespace ScreamJam
                 stairPosition = lower.position;
             else if (data.canGoDown)
                 stairPosition = upper.position;
+
+            ChangeAnimationState(walkAnim);
 
             float timer = 0;
             Vector3 originalPosition = transform.position;
@@ -207,6 +222,8 @@ namespace ScreamJam
             }
 
             data.usingStair = false;
+
+            ChangeAnimationState(idleAnim);
         }
 
         void Exorcise()
@@ -235,6 +252,8 @@ namespace ScreamJam
 
                 if (possessedItem != null)
                 {
+                    //data.velocity = 0;
+                    ChangeAnimationState(exorAnim);
                     possessedItem.GetComponent<PossessedItem>().EndPossession();
                 }
             }
@@ -243,6 +262,9 @@ namespace ScreamJam
         IEnumerator<float> _StabGhost(GameObject stabPosition)
         {
             data.stabbing = true;
+
+            ChangeAnimationState(attackAnim);
+
             float timer = 0;
             Vector3 originalPosition = transform.position;
             while (timer < data.getToGhostTime)
@@ -298,6 +320,14 @@ namespace ScreamJam
             eHide.Raise();
         }
 
+        void ChangeAnimationState(string newState)
+        {
+            if (newState == currentAnimState)
+                return;
+
+            currentAnimState = newState;
+            anim.Play(newState);
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == data.stairLayer)
