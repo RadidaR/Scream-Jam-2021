@@ -17,6 +17,11 @@ namespace ScreamJam
 
     public class GhostScript : MonoBehaviour
     {
+        public string type;
+        Animator anim;
+
+        [SerializeField] SpriteRenderer sprite;
+        int addColorID;
         //BehaviourTreeOwner ai;
         //NodeCanvas.BehaviourTrees
         Sensor sensor;
@@ -83,7 +88,12 @@ namespace ScreamJam
 
         private void Awake()
         {
+            //mat = GetComponent<Material>();
+            addColorID = Shader.PropertyToID("_AddColorFade");
+            sprite.material = new Material(sprite.material);
+
             sensor = GetComponent<Sensor>();
+            anim = GetComponentInChildren<Animator>();
             spotA.parent = null;
             spotB.parent = null;
             player = FindObjectOfType<Controller2D>().gameObject;
@@ -117,6 +127,21 @@ namespace ScreamJam
                     else
                         ChangeDirection(spotB.position);
             }
+
+            if (hasTarget)
+            {
+                anim.Play($"{type}_Ghost_Attack");
+                sprite.material.SetFloat(addColorID, 1);
+            }
+            else if (lostTarget)
+                anim.Play($"{type}_Ghost_Idle");
+            else
+            {
+                anim.Play($"{type}_Ghost_Scouting");
+                sprite.material.SetFloat(addColorID, 0);
+            }
+
+
         }
 
         public void DestroyGhost()
@@ -146,11 +171,11 @@ namespace ScreamJam
             }
         }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(spotA.position, 2);
-            Gizmos.DrawWireSphere(spotB.position, 2);
-        }
+        //private void OnDrawGizmosSelected()
+        //{
+        //    Gizmos.color = Color.yellow;
+        //    Gizmos.DrawWireSphere(spotA.position, 2);
+        //    Gizmos.DrawWireSphere(spotB.position, 2);
+        //}
     }
 }
