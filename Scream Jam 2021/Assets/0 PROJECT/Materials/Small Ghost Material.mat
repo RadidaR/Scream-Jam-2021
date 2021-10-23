@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Small Ghost Material
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
-  m_ShaderKeywords: _ENABLEADDCOLOR_ON _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT
+  m_ShaderKeywords: _OUTEROUTLINEDISTORTIONTOGGLE_ON _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT
     _UBERFADING_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -146,7 +146,7 @@ Material:
     - _DirectionalGlowFadeNoiseFactor: 0.2
     - _DirectionalGlowFadeRotation: 0
     - _DirectionalGlowFadeWidth: 0.1
-    - _EnableAddColor: 1
+    - _EnableAddColor: 0
     - _EnableAddHue: 0
     - _EnableAlphaTint: 0
     - _EnableBlackTint: 0
@@ -208,11 +208,11 @@ Material:
     - _FrozenHighlightDensity: 1
     - _FrozenSnowContrast: 1
     - _FrozenSnowDensity: 0.25
-    - _FullAlphaDissolveFade: 0.5
+    - _FullAlphaDissolveFade: 1
     - _FullAlphaDissolveWidth: 0.5
     - _FullDistortionFade: 1
     - _FullFade: 1
-    - _FullGlowDissolveFade: 0.5
+    - _FullGlowDissolveFade: 1
     - _FullGlowDissolveWidth: 0.5
     - _GlitchBrightness: 4
     - _GlitchFade: 1
@@ -245,9 +245,9 @@ Material:
     - _MetalFade: 1
     - _MetalHighlightContrast: 2
     - _MetalHighlightDensity: 1
-    - _OuterOutlineDistortionToggle: 0
+    - _OuterOutlineDistortionToggle: 1
     - _OuterOutlineFade: 1
-    - _OuterOutlineWidth: 0.04
+    - _OuterOutlineWidth: 4.05
     - _PixelateFade: 1
     - _PixelatePixelDensity: 16
     - _PixelsPerUnit: 100
@@ -313,7 +313,7 @@ Material:
     - _SquishSquish: 0.1
     - _SquishStretch: 0.1
     - _StrongTintContrast: 0
-    - _StrongTintFade: 1
+    - _StrongTintFade: 0
     - _TimeFPS: 5
     - _TimeFrequency: 2
     - _TimeRange: 0.5
@@ -406,8 +406,8 @@ Material:
     - _MetalNoiseDistortionSpeed: {r: -0.05, g: -0.05, b: 0, a: 0}
     - _MetalNoiseScale: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _MetalNoiseSpeed: {r: 0.05, g: 0.05, b: 0, a: 0}
-    - _OuterOutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OuterOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - _OuterOutlineColor: {r: 0, g: 0.23156714, b: 1, a: 1}
+    - _OuterOutlineDistortionIntensity: {r: 0.04, g: 0.01, b: 0, a: 0}
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
     - _PoisonColor: {r: 0.3137255, g: 2.996078, b: 0.3137255, a: 0}

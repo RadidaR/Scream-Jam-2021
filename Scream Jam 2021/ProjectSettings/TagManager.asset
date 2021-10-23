@@ -42,26 +42,38 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Distant Background
+  - name: Outside
     uniqueID: 1196247807
     locked: 0
-  - name: Mid Background
+  - name: Background Walls
     uniqueID: 46614349
     locked: 0
-  - name: Close Background
+  - name: Window Glass
     uniqueID: 2691786307
     locked: 0
   - name: Floor
     uniqueID: 3700434409
     locked: 0
-  - name: Player
+  - name: Dividers
     uniqueID: 3376243671
     locked: 0
-  - name: Forefront
+  - name: Stairs
     uniqueID: 3341245221
     locked: 0
-  - name: Near Forefront
+  - name: Objects
     uniqueID: 3699487413
+    locked: 0
+  - name: Player
+    uniqueID: 4277094703
+    locked: 0
+  - name: Ghosts
+    uniqueID: 2435845865
+    locked: 0
+  - name: Foreground
+    uniqueID: 507311961
+    locked: 0
+  - name: UI
+    uniqueID: 3781189751
     locked: 0
   - name: Default
     uniqueID: 0
