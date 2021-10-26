@@ -5,6 +5,7 @@ using SensorToolkit;
 //using ParadoxNotion;
 using NodeCanvas.BehaviourTrees;
 using MEC;
+using UnityEngine.Experimental.Rendering.Universal;
 
 namespace ScreamJam
 {
@@ -20,8 +21,14 @@ namespace ScreamJam
         public string type;
         Animator anim;
 
-        //[SerializeField] SpriteRenderer sprite;
-        int addColorID;
+        [SerializeField] SpriteRenderer sprite;
+        [SerializeField] BoxCollider2D stabZone;
+        Light2D visionLight;
+        [SerializeField] Transform eyeLevel;
+        float visionLightLength;
+
+        int innerOutlineID;
+        //int addColorID;
         //BehaviourTreeOwner ai;
         //NodeCanvas.BehaviourTrees
         Sensor sensor;
@@ -37,6 +44,7 @@ namespace ScreamJam
         [SerializeField] GameData data;
         [SerializeField] Transform spotA;
         [SerializeField] Transform spotB;
+        [SerializeField] GameEvent eUpdate;
         GameObject player;
 
         public Transform PatrolSpotA { get { return spotA; } set { } }
@@ -89,8 +97,11 @@ namespace ScreamJam
         private void Awake()
         {
             //mat = GetComponent<Material>();
-            addColorID = Shader.PropertyToID("_AddColorFade");
-            //sprite.material = new Material(sprite.material);
+            //addColorID = Shader.PropertyToID("_AddColorFade");
+            sprite.material = new Material(sprite.material);
+            innerOutlineID = Shader.PropertyToID("_InnerOutlineFade");
+            visionLight = GetComponentInChildren<Light2D>();
+            visionLightLength = visionLight.pointLightOuterRadius;
 
             sensor = GetComponent<Sensor>();
             anim = GetComponentInChildren<Animator>();
@@ -141,16 +152,26 @@ namespace ScreamJam
                 //sprite.material.SetFloat(addColorID, 0);
             }
 
+            if (Physics2D.OverlapBox(stabZone.gameObject.transform.position/* + new Vector3(stabZone.offset.x, stabZone.offset.y, 0)*/, stabZone.size, 0, data.playerLayerMask))
+                sprite.material.SetFloat(innerOutlineID, 1);
+            else
+                sprite.material.SetFloat(innerOutlineID, 0);
 
+            RaycastHit2D wallAhead = Physics2D.Raycast(eyeLevel.position, Vector2.right * transform.localScale.x, visionLightLength, data.groundLayerMask);
+            if (wallAhead)
+                visionLight.pointLightOuterRadius = wallAhead.distance;
+            else
+                visionLight.pointLightOuterRadius = visionLightLength;
         }
 
         public void DestroyGhost()
         {
-            Timing.RunCoroutine(_GetDestroyed(), Segment.FixedUpdate);
+            Timing.RunCoroutine(_GetDestroyed().CancelWith(gameObject), Segment.Update);
         }
 
         IEnumerator<float> _GetDestroyed()
         {
+            eUpdate.Raise();
             yield return Timing.WaitForOneFrame;
             Destroy(gameObject, 0);
         }

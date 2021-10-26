@@ -12,11 +12,20 @@ namespace ScreamJam
         PlayerInput player;
         BoxCollider2D boxCollider;
         Animator anim;
+
+
+        [FoldoutGroup("Animations")]
         [SerializeField] string currentAnimState;
+        [FoldoutGroup("Animations")]
         [SerializeField] string idleAnim;
+        [FoldoutGroup("Animations")]
         [SerializeField] string walkAnim;
+        [FoldoutGroup("Animations")]
         [SerializeField] string exorAnim;
+        [FoldoutGroup("Animations")]
         [SerializeField] string attackAnim;
+        [FoldoutGroup("Animations")]
+        [SerializeField] string deadAnim;
 
         float accelerationTime;
         float deccelerationTime;
@@ -33,17 +42,43 @@ namespace ScreamJam
         [SerializeField] GameEvent eHide;
         [FoldoutGroup("Events")]
         [SerializeField] GameEvent eReveal;
+        [FoldoutGroup("Events")]
+        [SerializeField] GameEvent eGameOver;
 
+        [FoldoutGroup("Transforms")]
         [SerializeField] Transform exorciseSpot;
+        [FoldoutGroup("Transforms")]
+        [SerializeField] Transform face;
         //[SerializeField] float exorciseRadius;
+
+        [Button("Change Values")]
+        void ChangeValues()
+        {
+            Debug.Log("Values Changed");
+        }
 
         bool canMove()
         {
-            if (!data.usingStair && !data.stabbing && !data.hiding)
+            if (!data.usingStair && !data.stabbing && !data.hiding && !data.dead)
                 return true;
             else
                 return false;
         }
+
+        RaycastHit2D wallAhead()
+        {
+            return Physics2D.Raycast(face.position, Vector2.right * Mathf.Sign(transform.localScale.x), 2, data.groundLayerMask);
+        }
+
+        
+        RaycastHit2D groundBelow()
+        {
+            return Physics2D.Raycast(transform.position, Vector2.down, 10, data.groundLayerMask);
+        }
+
+
+
+        
 
         private void Awake()
         {
@@ -74,6 +109,23 @@ namespace ScreamJam
 
             if (data.inSight)
                 data.canHide = false;
+
+            if (canMove())
+                Timing.RunCoroutine(_GroundCharacter(), Segment.FixedUpdate);
+        }
+
+        IEnumerator<float> _GroundCharacter()
+        {
+            while (groundBelow().distance > 0.5f)
+            {
+                yield return Timing.WaitForSeconds(Time.fixedDeltaTime);
+                Vector3 pos = transform.position;
+                pos.y -= Time.fixedDeltaTime;
+                transform.position = pos;
+
+                if (groundBelow().distance <= 0.5f)
+                    break;
+            }
         }
 
         void Move()
@@ -81,7 +133,16 @@ namespace ScreamJam
             if (!canMove())
                 return;
 
-            if (currentAnimState != exorAnim && currentAnimState != attackAnim)
+            Vector3 scale = transform.localScale;
+            scale.x = 1 * Mathf.Sign(player.input.Move.ReadValue<float>());
+            transform.localScale = scale;
+
+            //RaycastHit2D ray = Physics2D.Raycast(face.position, Vector2.right * Mathf.Sign(player.input.Move.ReadValue<float>()), 1.5f, data.groundLayerMask);
+
+            if (wallAhead())
+                return;
+
+            //if (currentAnimState != exorAnim)
                 ChangeAnimationState(walkAnim);
 
             if (Mathf.Sign(data.velocity) != Mathf.Sign(player.input.Move.ReadValue<float>()))
@@ -104,15 +165,23 @@ namespace ScreamJam
             position.x += data.velocity;
             transform.position = position;
 
-            Vector3 scale = transform.localScale;
-            scale.x = 1 * Mathf.Sign(player.input.Move.ReadValue<float>());
-            transform.localScale = scale;
+            
         }
 
         void Stop()
         {
             if (!canMove())
                 return;
+
+            //RaycastHit2D ray = Physics2D.Raycast(face.position, Vector2.right * Mathf.Sign(transform.localScale.x), 1.5f, data.groundLayerMask);
+
+            if (wallAhead())
+            {
+                data.velocity = 0;
+                data.maxSpeed = false;
+                ChangeAnimationState(idleAnim);
+                return;
+            }
 
             if (data.maxSpeed)
             {
@@ -144,7 +213,7 @@ namespace ScreamJam
                 transform.position = position;
             }
 
-            if (Mathf.Abs(data.velocity) < 0.05f)
+            if (currentAnimState != exorAnim && Mathf.Abs(data.velocity) < 0.2f)
                 ChangeAnimationState(idleAnim);
         }
 
@@ -240,7 +309,8 @@ namespace ScreamJam
 
                 if (stabZone != null)
                 {
-                    Timing.RunCoroutine(_StabGhost(stabZone.gameObject), Segment.FixedUpdate);
+                    if (!wallAhead())
+                        Timing.RunCoroutine(_StabGhost(stabZone.gameObject), Segment.FixedUpdate);
                 }
             }
             else
@@ -297,21 +367,23 @@ namespace ScreamJam
             else
             {
                 //PLAY hidingSpot.GetComponent<Animator>().Play();
+                hidingSpot.GetComponent<Animator>().Play($"{hidingSpot.transform.GetChild(0).gameObject.name}_Exit");
                 data.hiding = false;
                 eReveal.Raise();
             }
         }
 
-        IEnumerator<float> _Hide(GameObject hidePosition)
+        IEnumerator<float> _Hide(GameObject hidingSpot)
         {
+            hidingSpot.GetComponent<Animator>().Play($"{hidingSpot.transform.GetChild(0).gameObject.name}_Enter");
             float timer = 0;
             Vector3 originalPosition = transform.position;
             while (timer < data.getToHidingSpotTime)
             {
                 yield return Timing.WaitForSeconds(Time.fixedDeltaTime);
                 timer += Time.fixedDeltaTime;
-                transform.position = Vector3.Lerp(originalPosition, hidePosition.transform.position, timer / data.getToHidingSpotTime);
-                if (timer >= data.getToHidingSpotTime || transform.position == hidePosition.transform.position)
+                transform.position = Vector3.Lerp(originalPosition, hidingSpot.transform.position, timer / data.getToHidingSpotTime);
+                if (timer >= data.getToHidingSpotTime || transform.position == hidingSpot.transform.position)
                     break;
             }
 
@@ -348,7 +420,8 @@ namespace ScreamJam
             }
             else if (collision.gameObject.layer == data.ghostLayer)
             {
-                Debug.Log("Caught by ghost");
+                ChangeAnimationState(deadAnim);
+                Timing.RunCoroutine(_Die(), Segment.Update);
             }
             else if (collision.gameObject.layer == data.stabLayer)
             {
@@ -357,7 +430,19 @@ namespace ScreamJam
             else if (collision.gameObject.layer == data.sightLayer)
             {
                 if (!data.hiding)
-                    data.inSight = true;
+                {
+                    GhostScript[] ghosts = FindObjectsOfType<GhostScript>();
+
+                    bool spotted = false;
+                    foreach (GhostScript ghost in ghosts)
+                    {
+                        if (ghost.hasTarget)
+                            spotted = true;
+                    }
+
+                    if (spotted)
+                        data.inSight = true;
+                }
             }
         }
         private void OnTriggerStay2D(Collider2D collision)
@@ -380,7 +465,12 @@ namespace ScreamJam
             }
             else if (collision.gameObject.layer == data.ghostLayer)
             {
-                Debug.Log("Caught by ghost");
+                if (!data.dead)
+                {
+                    ChangeAnimationState(deadAnim);
+                    Timing.RunCoroutine(_Die(), Segment.Update);
+                }
+
             }
             else if (collision.gameObject.layer == data.stabLayer)
             {
@@ -389,7 +479,19 @@ namespace ScreamJam
             else if (collision.gameObject.layer == data.sightLayer)
             {
                 if (!data.hiding)
-                    data.inSight = true;
+                {
+                    GhostScript[] ghosts = FindObjectsOfType<GhostScript>();
+
+                    bool spotted = false;
+                    foreach (GhostScript ghost in ghosts)
+                    {
+                        if (ghost.hasTarget)
+                            spotted = true;
+                    }
+
+                    if (spotted)
+                        data.inSight = true;
+                }
             }
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -412,6 +514,13 @@ namespace ScreamJam
                 data.inSight = false;
             }
         }     
+
+        IEnumerator<float> _Die()
+        {
+            data.dead = true;
+            yield return Timing.WaitForSeconds(data.deathTime);
+            eGameOver.Raise();
+        }
 
         private void OnEnable()
         {

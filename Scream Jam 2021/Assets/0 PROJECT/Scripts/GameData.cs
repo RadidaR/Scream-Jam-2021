@@ -63,6 +63,10 @@ namespace ScreamJam
         [LabelWidth(80)]
         public bool stabbing;
 
+        [VerticalGroup("Booleans/Split/Right")]
+        [LabelWidth(80)]
+        public bool dead;
+
 
 
         [FoldoutGroup("Layers")]
@@ -157,6 +161,10 @@ namespace ScreamJam
         [LabelWidth(100)]
         public float getToHidingSpotTime;
 
+        [FoldoutGroup("Values")]
+        [LabelWidth(100)]
+        public float deathTime;
+
 
 
         public void ResetValues()
@@ -170,6 +178,7 @@ namespace ScreamJam
             maxSpeed = false;
             hiding = false;
             stabbing = false;
+            dead = false;
         }
     }
 }

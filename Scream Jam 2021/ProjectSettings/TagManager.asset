@@ -51,14 +51,17 @@ TagManager:
   - name: Window Glass
     uniqueID: 2691786307
     locked: 0
+  - name: Stairs
+    uniqueID: 3341245221
+    locked: 0
   - name: Floor
     uniqueID: 3700434409
     locked: 0
+  - name: Props
+    uniqueID: 1546965089
+    locked: 0
   - name: Dividers
     uniqueID: 3376243671
-    locked: 0
-  - name: Stairs
-    uniqueID: 3341245221
     locked: 0
   - name: Objects
     uniqueID: 3699487413

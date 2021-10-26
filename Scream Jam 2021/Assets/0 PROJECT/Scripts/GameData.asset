@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb82f71772f8284eb131cf08fe70d4f, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  velocity: -0
+  velocity: -0.5701608
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -81,13 +81,14 @@ MonoBehaviour:
     m_RotationOrder: 4
   canGoUp: 0
   canGoDown: 0
-  canHide: 1
+  canHide: 0
   canStab: 0
   inSight: 0
   usingStair: 0
   maxSpeed: 0
-  hiding: 1
+  hiding: 0
   stabbing: 0
+  dead: 0
   groundLayer: 3
   playerLayer: 6
   stairLayer: 7
@@ -124,3 +125,4 @@ MonoBehaviour:
   exorciseRadius: 5
   getToGhostTime: 0.2
   getToHidingSpotTime: 0.2
+  deathTime: 2.5
