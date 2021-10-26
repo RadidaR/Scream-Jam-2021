@@ -26,7 +26,10 @@ namespace ScreamJam
 
         [SerializeField] float currentTime;
         [SerializeField] Light2D dayLight;
-        float startingLight;
+        [SerializeField] Light2D houseLight;
+        float startingDaylight;
+        float startingHouseLight;
+        [SerializeField] float maxHouseLight;
 
         [SerializeField] bool levelCompleted;
         [SerializeField] bool levelLost;
@@ -41,7 +44,8 @@ namespace ScreamJam
             itemsTotal = FindObjectsOfType<PossessedItem>();
             ghostsTotal = FindObjectsOfType<GhostScript>();
 
-            startingLight = dayLight.intensity;
+            startingDaylight = dayLight.intensity;
+            startingHouseLight = houseLight.intensity;
 
             if (itemsTotal != null)
             {
@@ -72,7 +76,8 @@ namespace ScreamJam
             {
                 yield return Timing.WaitForSeconds(Time.deltaTime);
                 currentTime += Time.deltaTime;
-                dayLight.intensity = Mathf.Lerp(startingLight, 1, currentTime / levelDuration);
+                dayLight.intensity = Mathf.Lerp(startingDaylight, 1, currentTime / levelDuration);
+                houseLight.intensity = Mathf.Lerp(startingHouseLight, maxHouseLight, currentTime / levelDuration);
 
                 if (levelCompleted)
                     break;
