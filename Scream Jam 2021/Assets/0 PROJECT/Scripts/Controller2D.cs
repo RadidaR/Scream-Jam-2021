@@ -71,7 +71,7 @@ namespace ScreamJam
 
 
 
-        
+        public bool canExorcise;
 
         private void Awake()
         {
@@ -105,6 +105,11 @@ namespace ScreamJam
 
             if (canMove())
                 Timing.RunCoroutine(_GroundCharacter(), Segment.FixedUpdate);
+        }
+
+        void Update()
+        {
+            data.canExorcise = Physics2D.OverlapCircle(exorciseSpot.position, data.exorciseRadius, data.itemLayerMask);
         }
 
         IEnumerator<float> _GroundCharacter()
@@ -290,7 +295,7 @@ namespace ScreamJam
 
         void Exorcise()
         {
-            if (data.usingStair || data.hiding)
+            if (!canMove())
                 return;
 
             if (data.canStab)

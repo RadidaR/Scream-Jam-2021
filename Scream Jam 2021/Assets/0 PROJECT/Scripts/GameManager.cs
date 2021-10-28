@@ -13,13 +13,13 @@ namespace ScreamJam
     {
         [SerializeField] GameData data;
 
-        [SerializeField] int currentLevel;
-        [SerializeField] float levelDuration;
+        public int currentLevel;
+        public float levelDuration;
 
         [SerializeField] PossessedItem[] itemsTotal;
         [SerializeField] GhostScript[] ghostsTotal;
-        [SerializeField] List<PossessedItem> itemsLeft;
-        [SerializeField] List<GhostScript> ghostsLeft;
+        public List<PossessedItem> itemsLeft;
+        public List<GhostScript> ghostsLeft;
 
         [SerializeField] GameObject itemBackground;
         [SerializeField] GameObject ghostBackground;
@@ -162,7 +162,7 @@ namespace ScreamJam
             }
             else
             {
-                itemsText.text = $"Possessions: {itemsLeft.Count} / {itemsTotal.Length}";
+                itemsText.text = $" {itemsLeft.Count} / {itemsTotal.Length}";
                 itemBackground.SetActive(true);
                 itemsText.gameObject.SetActive(true);
             }
@@ -174,7 +174,7 @@ namespace ScreamJam
             }
             else
             {
-                ghostsText.text = $"Ghosts: {ghostsLeft.Count} / {ghostsTotal.Length}";
+                ghostsText.text = $" {ghostsLeft.Count} / {ghostsTotal.Length}";
                 ghostBackground.SetActive(true);
                 ghostsText.gameObject.SetActive(true);
             }
