@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using MEC;
 using TMPro;
 using UnityEngine.Experimental.Rendering.Universal;
+using MPUIKIT;
 
 namespace ScreamJam
 {
@@ -20,9 +21,15 @@ namespace ScreamJam
         [SerializeField] List<PossessedItem> itemsLeft;
         [SerializeField] List<GhostScript> ghostsLeft;
 
+        [SerializeField] GameObject itemBackground;
+        [SerializeField] GameObject ghostBackground;
         [SerializeField] TextMeshProUGUI itemsText;
         [SerializeField] TextMeshProUGUI ghostsText;
-        [SerializeField] TextMeshProUGUI timerText;
+        //[SerializeField] TextMeshProUGUI timerText;
+        [SerializeField] MPImage timerImage;
+        [SerializeField] Color startColor;
+        [SerializeField] Color midColor;
+        [SerializeField] Color endColor;
 
         [SerializeField] float currentTime;
         [SerializeField] Light2D dayLight;
@@ -34,8 +41,11 @@ namespace ScreamJam
         [SerializeField] bool levelCompleted;
         [SerializeField] bool levelLost;
 
-        [SerializeField] GameObject gameWonScreen;
-        [SerializeField] GameObject gameOverScreen;
+        //[SerializeField] GameObject gameWonScreen;
+        //[SerializeField] GameObject gameOverScreen;
+
+        [SerializeField] GameEvent eGameOver;
+        [SerializeField] GameEvent eGameWon;
 
         private void Awake()
         {
@@ -67,7 +77,9 @@ namespace ScreamJam
 
         void Update()
         {
-            timerText.text = $"Time Left: {Mathf.Round(levelDuration - currentTime)}";
+            //timerText.text = $"Time Left: {Mathf.Round(levelDuration - currentTime)}";
+            //timerImage.fillAmount = Mathf.Lerp()
+            //timerImage.color = startColor;
         }
 
         IEnumerator<float> _LevelDuration()
@@ -76,13 +88,24 @@ namespace ScreamJam
             {
                 yield return Timing.WaitForSeconds(Time.deltaTime);
                 currentTime += Time.deltaTime;
-                dayLight.intensity = Mathf.Lerp(startingDaylight, 1, currentTime / levelDuration);
-                houseLight.intensity = Mathf.Lerp(startingHouseLight, maxHouseLight, currentTime / levelDuration);
+                float percent = currentTime / levelDuration;
+
+                dayLight.intensity = Mathf.Lerp(startingDaylight, 1, percent);
+                houseLight.intensity = Mathf.Lerp(startingHouseLight, maxHouseLight, percent);
+                timerImage.fillAmount = Mathf.Lerp(1, 0, percent);
+
+                if (percent < 0.5f)
+                    timerImage.color = startColor.LerpToColor(midColor, percent * 2);
+                else
+                {
+                    timerImage.color = midColor.LerpToColor(endColor, (percent - 0.5f) / 0.5f);
+                }
+
 
                 if (levelCompleted)
                     break;
 
-                if (currentTime > levelDuration)
+                if (currentTime >= levelDuration)
                 {
                     Lose();
                     break;
@@ -133,31 +156,47 @@ namespace ScreamJam
         void UpdateUI()
         {
             if (itemsLeft.Count == 0)
+            {
+                itemBackground.SetActive(false);
                 itemsText.gameObject.SetActive(false);
+            }
             else
+            {
+                itemsText.text = $"Possessions: {itemsLeft.Count} / {itemsTotal.Length}";
+                itemBackground.SetActive(true);
                 itemsText.gameObject.SetActive(true);
+            }
 
             if (ghostsLeft.Count == 0)
+            {
+                ghostBackground.SetActive(false);
                 ghostsText.gameObject.SetActive(false);
+            }
             else
+            {
+                ghostsText.text = $"Ghosts: {ghostsLeft.Count} / {ghostsTotal.Length}";
+                ghostBackground.SetActive(true);
                 ghostsText.gameObject.SetActive(true);
-
-            itemsText.text = $"Possessed Items: {itemsLeft.Count} / {itemsTotal.Length}";
-
-            ghostsText.text = $"Ghosts: {ghostsLeft.Count} / {ghostsTotal.Length}";
+            }
         }
+
         void Win()
         {
             levelCompleted = true;
-            gameWonScreen.SetActive(true);
-            Time.timeScale = 0;
+            Timing.RunCoroutine(_LevelCompleted(), Segment.LateUpdate);
+        }
+
+        IEnumerator<float> _LevelCompleted()
+        {
+            yield return Timing.WaitForSeconds(1);
+            eGameWon.Raise();
         }
 
         public void Lose()
         {
             levelLost = true;
-            gameOverScreen.SetActive(true);
-            Time.timeScale = 0;
+            data.dead = true;
+            eGameOver.Raise();
         }
 
         public void LoadScene(int sceneNumber)

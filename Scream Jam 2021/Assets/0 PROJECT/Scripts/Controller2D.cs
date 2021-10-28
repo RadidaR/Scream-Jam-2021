@@ -43,19 +43,12 @@ namespace ScreamJam
         [FoldoutGroup("Events")]
         [SerializeField] GameEvent eReveal;
         [FoldoutGroup("Events")]
-        [SerializeField] GameEvent eGameOver;
+        [SerializeField] GameEvent eCaught;
 
         [FoldoutGroup("Transforms")]
         [SerializeField] Transform exorciseSpot;
         [FoldoutGroup("Transforms")]
         [SerializeField] Transform face;
-        //[SerializeField] float exorciseRadius;
-
-        [Button("Change Values")]
-        void ChangeValues()
-        {
-            Debug.Log("Values Changed");
-        }
 
         bool canMove()
         {
@@ -420,8 +413,11 @@ namespace ScreamJam
             }
             else if (collision.gameObject.layer == data.ghostLayer)
             {
-                ChangeAnimationState(deadAnim);
-                Timing.RunCoroutine(_Die(), Segment.Update);
+                if (!data.dead)
+                {
+                    ChangeAnimationState(deadAnim);
+                    Timing.RunCoroutine(_Die(), Segment.Update);
+                }
             }
             else if (collision.gameObject.layer == data.stabLayer)
             {
@@ -519,7 +515,7 @@ namespace ScreamJam
         {
             data.dead = true;
             yield return Timing.WaitForSeconds(data.deathTime);
-            eGameOver.Raise();
+            eCaught.Raise();
         }
 
         private void OnEnable()

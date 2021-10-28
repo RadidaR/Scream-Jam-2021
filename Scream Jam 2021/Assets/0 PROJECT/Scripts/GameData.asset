@@ -12,36 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb82f71772f8284eb131cf08fe70d4f, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  velocity: -0.5701608
+  velocity: 0.10035833
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1.6255443
-      outSlope: 1.6255443
+      inSlope: 0.657354
+      outSlope: 0.657354
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.17383884
+      outWeight: 0.1400887
     - serializedVersion: 3
-      time: 0.50555027
-      value: 0.22110128
-      inSlope: 0.6578664
-      outSlope: 0.6578664
+      time: 0.6
+      value: 0.125
+      inSlope: 0.25498483
+      outSlope: 0.25498483
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.2065983
-      outWeight: 0.25632775
+      outWeight: 0.37456796
     - serializedVersion: 3
-      time: 0.75
-      value: 0.55
-      inSlope: -0.09971551
-      outSlope: -0.09971551
+      time: 1
+      value: 0.375
+      inSlope: -0.092024006
+      outSlope: -0.092024006
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.31373662
+      inWeight: 0.2787507
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -51,24 +51,24 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.7
-      inSlope: -3.0712254
-      outSlope: -3.0712254
+      value: 0.375
+      inSlope: -0.77745295
+      outSlope: -0.77745295
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.2167924
+      outWeight: 0.21925306
     - serializedVersion: 3
-      time: 0.22007176
-      value: 0.09381295
-      inSlope: -0.8756482
-      outSlope: -0.8756482
+      time: 0.15211539
+      value: 0.07800452
+      inSlope: -0.74419385
+      outSlope: -0.74419385
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.3426286
-      outWeight: 0.16879356
+      inWeight: 0.18693653
+      outWeight: 0.28515697
     - serializedVersion: 3
-      time: 0.5
+      time: 0.3
       value: 0
       inSlope: -0.117788434
       outSlope: -0.117788434
@@ -83,12 +83,12 @@ MonoBehaviour:
   canGoDown: 0
   canHide: 0
   canStab: 0
-  inSight: 0
+  inSight: 1
   usingStair: 0
   maxSpeed: 0
   hiding: 0
   stabbing: 0
-  dead: 0
+  dead: 1
   groundLayer: 3
   playerLayer: 6
   stairLayer: 7
