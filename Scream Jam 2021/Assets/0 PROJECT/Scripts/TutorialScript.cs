@@ -17,12 +17,22 @@ namespace ScreamJam
         Image panelImage;
 
         [SerializeField] string[] tutorialOneTexts;
+        [SerializeField] string[] tutorialTwoTexts;
+
         private void Awake()
         {
             manager = GetComponent<GameManager>();
             panelImage = tutorialPanel.GetComponent<Image>();
             if (manager.currentLevel == 1)
                 Timing.RunCoroutine(_Level1(), Segment.Update);
+            else if (manager.currentLevel == 2)
+                Timing.RunCoroutine(_Level2(), Segment.Update);
+        }
+
+        private void LateUpdate()
+        {
+            if (data.dead || manager.levelLost)
+                Timing.KillCoroutines();
         }
 
         IEnumerator<float> _Level1()
@@ -79,7 +89,60 @@ namespace ScreamJam
             Timing.RunCoroutine(_PanelOff(), Segment.Update);
 
         }
+        IEnumerator<float> _Level2()
+        {
+            yield return Timing.WaitForSeconds(1);
 
+            tutorialText.text = tutorialTwoTexts[0];
+            Timing.RunCoroutine(_PanelOn(), Segment.LateUpdate);
+
+            if (data.dead)
+                Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
+
+            float timer = 0;
+            while (timer < manager.levelDuration)
+            {
+                yield return Timing.WaitForSeconds(Time.deltaTime);
+                timer += Time.deltaTime;
+
+                if (tutorialText.text != tutorialTwoTexts[1])
+                {
+                    if (data.canStab)
+                        tutorialText.text = tutorialTwoTexts[1];
+                }
+                else
+                {
+                    if (manager.ghostsLeft.Count == 2)
+                        break;
+                }
+            }
+            Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
+
+            yield return Timing.WaitForSeconds(2);
+            tutorialText.text = tutorialTwoTexts[2];
+            Timing.RunCoroutine(_PanelOn(), Segment.LateUpdate);
+
+            timer = 0;
+            while (timer < manager.levelDuration)
+            {
+                yield return Timing.WaitForSeconds(Time.deltaTime);
+                timer += Time.deltaTime;
+
+                if (tutorialText.text != tutorialTwoTexts[3])
+                {
+                    if (data.inSight)
+                        tutorialText.text = tutorialTwoTexts[3];
+                }
+                else
+                {
+                    if (!data.inSight)
+                        break;
+                }
+            }
+            yield return Timing.WaitForSeconds(3);
+
+            Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
+        }
         IEnumerator<float> _PanelOn()
         {
             panelImage.color = panelImage.color.SetAlpha(a: 0);

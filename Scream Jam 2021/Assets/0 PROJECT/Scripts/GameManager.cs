@@ -39,7 +39,7 @@ namespace ScreamJam
         [SerializeField] float maxHouseLight;
 
         [SerializeField] bool levelCompleted;
-        [SerializeField] bool levelLost;
+        public bool levelLost;
 
         //[SerializeField] GameObject gameWonScreen;
         //[SerializeField] GameObject gameOverScreen;
