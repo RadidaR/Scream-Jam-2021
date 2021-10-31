@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Game Won Material
   m_Shader: {fileID: 4800000, guid: 6e2eed3f9017db447814cf8cfbfa4fbe, type: 3}
-  m_ShaderKeywords: _ENABLEFULLGLOWDISSOLVE_ON _ENABLESTRONGTINT_ON _SHADERSPACE_UV
+  m_ShaderKeywords: _ENABLESOURCEALPHADISSOLVE_ON _ENABLESTRONGTINT_ON _SHADERSPACE_UV
     _TIMESETTINGS_LINEAR_DEFAULT _UBERFADING_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -165,7 +165,7 @@ Material:
     - _EnableFrozen: 0
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
-    - _EnableFullGlowDissolve: 1
+    - _EnableFullGlowDissolve: 0
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0
@@ -185,7 +185,7 @@ Material:
     - _EnableSineMove: 0
     - _EnableSineRotate: 0
     - _EnableSmoke: 0
-    - _EnableSourceAlphaDissolve: 0
+    - _EnableSourceAlphaDissolve: 1
     - _EnableSourceGlowDissolve: 0
     - _EnableSplitToning: 0
     - _EnableSqueeze: 0
@@ -295,10 +295,10 @@ Material:
     - _SmokeNoiseScale: 0.5
     - _SmokeSmoothness: 1
     - _SmokeVertexSeed: 0
-    - _SourceAlphaDissolveFade: 1.53
+    - _SourceAlphaDissolveFade: 0
     - _SourceAlphaDissolveInvert: 0
-    - _SourceAlphaDissolveNoiseFactor: 0.89
-    - _SourceAlphaDissolveWidth: 0.44
+    - _SourceAlphaDissolveNoiseFactor: 5
+    - _SourceAlphaDissolveWidth: 5
     - _SourceGlowDissolveFade: 1
     - _SourceGlowDissolveInvert: 0
     - _SourceGlowDissolveNoiseFactor: 0.2
@@ -318,7 +318,7 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
-    - _StrongTintContrast: 0
+    - _StrongTintContrast: 0.91
     - _StrongTintFade: 1
     - _TimeFPS: 5
     - _TimeFrequency: 2
@@ -434,7 +434,7 @@ Material:
     - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}
     - _SineMoveOffset: {r: 0, g: 0.5, b: 0, a: 0}
     - _SineRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _SourceAlphaDissolveNoiseScale: {r: 0.3, g: 0.3, b: 0, a: 0}
+    - _SourceAlphaDissolveNoiseScale: {r: 0.35, g: 0.3, b: 0, a: 0}
     - _SourceAlphaDissolvePosition: {r: 0, g: 0, b: 0, a: 0}
     - _SourceGlowDissolveEdgeColor: {r: 11.98431, g: 0.627451, b: 0.627451, a: 0}
     - _SourceGlowDissolveNoiseScale: {r: 0.3, g: 0.3, b: 0, a: 0}
@@ -443,7 +443,7 @@ Material:
     - _SplitToningShadowsColor: {r: 0.1, g: 0.4000002, b: 1, a: 0}
     - _SqueezeCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SqueezeScale: {r: 2, g: 0, b: 0, a: 0}
-    - _StrongTintTint: {r: 0, g: 0, b: 0, a: 1}
+    - _StrongTintTint: {r: 1, g: 0.8571335, b: 0.4481132, a: 1}
     - _UVDistortFrom: {r: -0.02, g: -0.02, b: 0, a: 0}
     - _UVDistortNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _UVDistortSpeed: {r: 2, g: 2, b: 0, a: 0}

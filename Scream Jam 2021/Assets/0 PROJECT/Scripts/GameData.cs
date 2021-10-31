@@ -45,6 +45,10 @@ namespace ScreamJam
 
         [VerticalGroup("Booleans/Split/Left")]
         [LabelWidth(80)]
+        public bool canExorcise;
+
+        [VerticalGroup("Booleans/Split/Left")]
+        [LabelWidth(80)]
         public bool inSight;
 
         [VerticalGroup("Booleans/Split/Right")]

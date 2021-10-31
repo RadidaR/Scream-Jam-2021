@@ -43,19 +43,12 @@ namespace ScreamJam
         [FoldoutGroup("Events")]
         [SerializeField] GameEvent eReveal;
         [FoldoutGroup("Events")]
-        [SerializeField] GameEvent eGameOver;
+        [SerializeField] GameEvent eCaught;
 
         [FoldoutGroup("Transforms")]
         [SerializeField] Transform exorciseSpot;
         [FoldoutGroup("Transforms")]
         [SerializeField] Transform face;
-        //[SerializeField] float exorciseRadius;
-
-        [Button("Change Values")]
-        void ChangeValues()
-        {
-            Debug.Log("Values Changed");
-        }
 
         bool canMove()
         {
@@ -78,7 +71,7 @@ namespace ScreamJam
 
 
 
-        
+        public bool canExorcise;
 
         private void Awake()
         {
@@ -112,6 +105,11 @@ namespace ScreamJam
 
             if (canMove())
                 Timing.RunCoroutine(_GroundCharacter(), Segment.FixedUpdate);
+        }
+
+        void Update()
+        {
+            data.canExorcise = Physics2D.OverlapCircle(exorciseSpot.position, data.exorciseRadius, data.itemLayerMask);
         }
 
         IEnumerator<float> _GroundCharacter()
@@ -297,7 +295,7 @@ namespace ScreamJam
 
         void Exorcise()
         {
-            if (data.usingStair || data.hiding)
+            if (!canMove())
                 return;
 
             if (data.canStab)
@@ -420,8 +418,11 @@ namespace ScreamJam
             }
             else if (collision.gameObject.layer == data.ghostLayer)
             {
-                ChangeAnimationState(deadAnim);
-                Timing.RunCoroutine(_Die(), Segment.Update);
+                if (!data.dead)
+                {
+                    ChangeAnimationState(deadAnim);
+                    Timing.RunCoroutine(_Die(), Segment.Update);
+                }
             }
             else if (collision.gameObject.layer == data.stabLayer)
             {
@@ -519,7 +520,7 @@ namespace ScreamJam
         {
             data.dead = true;
             yield return Timing.WaitForSeconds(data.deathTime);
-            eGameOver.Raise();
+            eCaught.Raise();
         }
 
         private void OnEnable()

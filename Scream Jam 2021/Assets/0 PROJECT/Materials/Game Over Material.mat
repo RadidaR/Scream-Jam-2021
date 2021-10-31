@@ -395,7 +395,7 @@ Material:
     - _FullAlphaDissolveNoiseScale: {r: 1.18, g: 3.49, b: 0, a: 0}
     - _FullDistortionDistortion: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FullDistortionNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _FullGlowDissolveEdgeColor: {r: 27.98086, g: 27.98086, b: 27.98086, a: 1}
+    - _FullGlowDissolveEdgeColor: {r: 39.05232, g: 39.05232, b: 39.05232, a: 0}
     - _FullGlowDissolveNoiseScale: {r: 3, g: 3, b: 0, a: 0}
     - _GlitchDistortion: {r: 0.1, g: 0, b: 0, a: 0}
     - _GlitchDistortionScale: {r: 0, g: 3, b: 0, a: 0}
