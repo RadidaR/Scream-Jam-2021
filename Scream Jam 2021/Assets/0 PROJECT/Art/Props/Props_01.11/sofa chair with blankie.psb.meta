@@ -91,6 +91,28 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: blanket_sofa
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 686
+      y: 4
+      width: 171
+      height: 330
+    spriteID: a4bea6c76dcf6d04b8dc5a46bf52d2fa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 550, y: -138}
   - name: sofa
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -102,7 +124,7 @@ ScriptedImporter:
       y: 4
       width: 674
       height: 800
-    spriteID: 133811dcdb7d328428f2372b522e70bd
+    spriteID: 29bc44cf12762b3479f6403b5c37b09a
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -146,11 +168,18 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: blanket_sofa
+    spriteName: blanket_sofa
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a4bea6c76dcf6d04b8dc5a46bf52d2fa
+    layerID: 245563947
+    mosaicPosition: {x: 686, y: 4}
   - name: sofa
     spriteName: sofa
     isGroup: 0
     parentIndex: -1
-    spriteID: 133811dcdb7d328428f2372b522e70bd
+    spriteID: 29bc44cf12762b3479f6403b5c37b09a
     layerID: -555122905
     mosaicPosition: {x: 4, y: 4}
   sharedRigPSDLayers: []
