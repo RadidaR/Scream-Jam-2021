@@ -71,7 +71,7 @@ namespace ScreamJam
 
 
 
-        public bool canExorcise;
+        //public bool canExorcise;
 
         private void Awake()
         {
@@ -114,7 +114,7 @@ namespace ScreamJam
 
         IEnumerator<float> _GroundCharacter()
         {
-            while (groundBelow().distance > 0.5f)
+            while (groundBelow().distance > 0.5f && !data.hiding)
             {
                 yield return Timing.WaitForSeconds(Time.fixedDeltaTime);
                 Vector3 pos = transform.position;
@@ -217,8 +217,11 @@ namespace ScreamJam
 
         void CheckForStairs()
         {
-            if ((!data.canGoUp && !data.canGoDown) || data.usingStair)
+            if (!canMove()) return;
+
+            if (!data.canGoUp && !data.canGoDown)
                 return;
+
 
             Vector2 colliderPosition = transform.position + new Vector3(boxCollider.offset.x, boxCollider.offset.y, 0);
 
@@ -520,6 +523,7 @@ namespace ScreamJam
         {
             data.dead = true;
             yield return Timing.WaitForSeconds(data.deathTime);
+            Debug.Log("here");
             eCaught.Raise();
         }
 

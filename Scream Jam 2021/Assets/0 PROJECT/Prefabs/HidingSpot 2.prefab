@@ -137,7 +137,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d7d60ebb6cf59ed4eabe2721ca6543ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 8071280681584012252}
   - component: {fileID: 8071280681584012253}
   - component: {fileID: 6878264935646292560}
+  - component: {fileID: 5616962615903685694}
   m_Layer: 8
   m_Name: HidingSpot 2
   m_TagString: Untagged
@@ -696,3 +697,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5616962615903685694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071280681584012254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b724c298d36c2f149b3bc14b61c77eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 132bcab0ab9c23c439509fdad7d5a490, type: 2}
+  sprite: {fileID: 8992743751688622883}
+  midValue: 0.35
+  maxValue: 1
+  time: 0.15

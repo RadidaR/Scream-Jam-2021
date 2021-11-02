@@ -18,6 +18,7 @@ namespace ScreamJam
 
         [SerializeField] string[] tutorialOneTexts;
         [SerializeField] string[] tutorialTwoTexts;
+        [SerializeField] string[] tutorialThreeTexts;
 
         private void Awake()
         {
@@ -27,12 +28,14 @@ namespace ScreamJam
                 Timing.RunCoroutine(_Level1(), Segment.Update);
             else if (manager.currentLevel == 2)
                 Timing.RunCoroutine(_Level2(), Segment.Update);
+            else if (manager.currentLevel == 3)
+                Timing.RunCoroutine(_Level3(), Segment.Update);
         }
 
         private void LateUpdate()
         {
             if (data.dead || manager.levelLost)
-                Timing.KillCoroutines();
+                Timing.RunCoroutine(_PanelOff(), Segment.Update);
         }
 
         IEnumerator<float> _Level1()
@@ -97,13 +100,16 @@ namespace ScreamJam
             Timing.RunCoroutine(_PanelOn(), Segment.LateUpdate);
 
             if (data.dead)
-                Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
+                yield break;
 
             float timer = 0;
             while (timer < manager.levelDuration)
             {
                 yield return Timing.WaitForSeconds(Time.deltaTime);
                 timer += Time.deltaTime;
+
+                if (data.dead)
+                    yield break;
 
                 if (tutorialText.text != tutorialTwoTexts[1])
                 {
@@ -120,6 +126,10 @@ namespace ScreamJam
 
             yield return Timing.WaitForSeconds(2);
             tutorialText.text = tutorialTwoTexts[2];
+
+            if (data.dead)
+                yield break;
+
             Timing.RunCoroutine(_PanelOn(), Segment.LateUpdate);
 
             timer = 0;
@@ -127,6 +137,9 @@ namespace ScreamJam
             {
                 yield return Timing.WaitForSeconds(Time.deltaTime);
                 timer += Time.deltaTime;
+
+                if (data.dead)
+                    yield break;
 
                 if (tutorialText.text != tutorialTwoTexts[3])
                 {
@@ -139,10 +152,86 @@ namespace ScreamJam
                         break;
                 }
             }
+
+            if (data.dead)
+                yield break;
+
             yield return Timing.WaitForSeconds(3);
 
             Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
         }
+        IEnumerator<float> _Level3()
+        {
+            yield return Timing.WaitForSeconds(1);
+
+            tutorialText.text = tutorialThreeTexts[0];
+            Timing.RunCoroutine(_PanelOn(), Segment.Update);
+
+            float timer = 0;
+            while (timer < manager.levelDuration)
+            {
+                timer += Time.deltaTime;
+                yield return Timing.WaitForSeconds(Time.deltaTime);
+
+                if (data.dead)
+                    yield break;
+
+                if (data.inSight)
+                {
+                    tutorialText.text = tutorialThreeTexts[1];
+                    break;
+                }
+
+                if (tutorialText.text != tutorialThreeTexts[2])
+                    if (data.canHide)
+                    {
+                        tutorialText.text = tutorialThreeTexts[2];
+                        break;
+                    }
+            }
+
+            if (data.dead)
+                yield break;
+
+            timer = 0;
+            while (timer < manager.levelDuration)
+            {
+                timer += Time.deltaTime;
+                yield return Timing.WaitForSeconds(Time.deltaTime);
+
+                if (data.inSight)
+                {
+                    tutorialText.text = tutorialThreeTexts[1];
+                    yield return Timing.WaitForSeconds(2);
+                    break;
+                }
+
+                if (data.dead)
+                    yield break;
+
+                if (data.hiding)
+                    break;
+
+            }
+
+
+            Timing.RunCoroutine(_PanelOff(), Segment.Update);
+
+            if (data.dead)
+                yield break;
+
+            yield return Timing.WaitForSeconds(1.5f);
+
+            if (!data.inSight)
+            {
+                tutorialText.text = tutorialThreeTexts[3];
+                Timing.RunCoroutine(_PanelOn(), Segment.Update);
+            }
+
+            yield return Timing.WaitForSeconds(4f);
+            Timing.RunCoroutine(_PanelOff(), Segment.Update);
+        }
+
         IEnumerator<float> _PanelOn()
         {
             panelImage.color = panelImage.color.SetAlpha(a: 0);
