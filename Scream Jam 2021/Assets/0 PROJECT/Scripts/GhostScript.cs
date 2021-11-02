@@ -28,6 +28,12 @@ namespace ScreamJam
         float visionLightLength;
 
         int innerOutlineID;
+        int glowDissolveID;
+
+        bool destroying;
+        [SerializeField] float destructionTime;
+
+
         //int addColorID;
         //BehaviourTreeOwner ai;
         //NodeCanvas.BehaviourTrees
@@ -100,6 +106,7 @@ namespace ScreamJam
             //addColorID = Shader.PropertyToID("_AddColorFade");
             sprite.material = new Material(sprite.material);
             innerOutlineID = Shader.PropertyToID("_InnerOutlineFade");
+            glowDissolveID = Shader.PropertyToID("_FullGlowDissolveFade");
             visionLight = GetComponentInChildren<Light2D>();
             visionLightLength = visionLight.pointLightOuterRadius;
 
@@ -152,10 +159,13 @@ namespace ScreamJam
                 //sprite.material.SetFloat(addColorID, 0);
             }
 
-            if (Physics2D.OverlapBox(stabZone.gameObject.transform.position/* + new Vector3(stabZone.offset.x, stabZone.offset.y, 0)*/, stabZone.size, 0, data.playerLayerMask))
-                sprite.material.SetFloat(innerOutlineID, 1);
-            else
-                sprite.material.SetFloat(innerOutlineID, 0);
+            if (!destroying)
+            {
+                if (Physics2D.OverlapBox(stabZone.gameObject.transform.position/* + new Vector3(stabZone.offset.x, stabZone.offset.y, 0)*/, stabZone.size, 0, data.playerLayerMask))
+                    sprite.material.SetFloat(innerOutlineID, 1);
+                else
+                    sprite.material.SetFloat(innerOutlineID, 0);
+            }
 
             RaycastHit2D wallAhead = Physics2D.Raycast(eyeLevel.position, Vector2.right * transform.localScale.x, visionLightLength, data.groundLayerMask);
             if (wallAhead)
@@ -172,7 +182,28 @@ namespace ScreamJam
         IEnumerator<float> _GetDestroyed()
         {
             eUpdate.Raise();
+            destroying = true;
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            visionLight.enabled = false;
+
             yield return Timing.WaitForOneFrame;
+            SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+            sprite.material.SetFloat(innerOutlineID, 0);
+
+            foreach (SpriteRenderer renderer in sprites)
+            {
+                renderer.material = sprite.material;
+            }
+
+            float timer = 0;
+
+            while (timer < destructionTime)
+            {
+                yield return Timing.WaitForSeconds(Time.deltaTime);
+                timer += Time.deltaTime;
+                sprite.material.SetFloat(glowDissolveID, Mathf.Lerp(1, 0, timer / destructionTime));
+            }
+
             Destroy(gameObject, 0);
         }
 

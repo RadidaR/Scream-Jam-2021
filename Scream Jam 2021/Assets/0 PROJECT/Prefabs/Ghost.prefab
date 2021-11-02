@@ -639,6 +639,7 @@ MonoBehaviour:
   sprite: {fileID: 6194495989847707680}
   stabZone: {fileID: 3395948399115245066}
   eyeLevel: {fileID: 6151302673253836855}
+  destructionTime: 0.65
   state: 0
   data: {fileID: 11400000, guid: 132bcab0ab9c23c439509fdad7d5a490, type: 2}
   spotA: {fileID: 3395948399652703073}

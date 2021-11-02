@@ -2200,6 +2200,7 @@ MonoBehaviour:
   sprite: {fileID: 5463431983801591951}
   stabZone: {fileID: 6798687986487017746}
   eyeLevel: {fileID: 8381692651114334529}
+  destructionTime: 0.5
   state: 0
   data: {fileID: 11400000, guid: 132bcab0ab9c23c439509fdad7d5a490, type: 2}
   spotA: {fileID: 6798687985950743673}
@@ -2223,7 +2224,7 @@ MonoBehaviour:
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"hasTarget":{"_propertyPath":"ScreamJam.GhostScript.hasTarget","_name":"hasTarget","_id":"cdc56ccc-5989-4408-9247-9a23ab918a6f","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Target":{"_propertyPath":"ScreamJam.GhostScript.Target","_name":"Target","_id":"aaad7709-eb1b-4991-baa4-ad700c3d77ce","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"chaseSpeed":{"_value":18.0,"_name":"chaseSpeed","_id":"bbd630ae-2c24-4a7f-8f32-828627addf43","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"chaseSpeed":{"_value":16.0,"_name":"chaseSpeed","_id":"bbd630ae-2c24-4a7f-8f32-828627addf43","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"selfX":{"_propertyPath":"ScreamJam.GhostScript.xPosition","_name":"selfX","_id":"ab8f17e5-dcc0-4612-8823-c35613b5cbca","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"goingToA":{"_propertyPath":"ScreamJam.GhostScript.GoingToA","_name":"goingToA","_id":"2fe5e11c-08d4-4f32-8fe2-1c395e883143","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"PatrolSpotA":{"_propertyPath":"ScreamJam.GhostScript.PatrolSpotA","_name":"PatrolSpotA","_id":"c3484dc1-7c68-4567-83d8-0b2c09c669da","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
@@ -2242,7 +2243,7 @@ MonoBehaviour:
   - _json: '{"_propertyPath":"ScreamJam.GhostScript.Target","_name":"Target","_id":"aaad7709-eb1b-4991-baa4-ad700c3d77ce","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
-  - _json: '{"_value":18.0,"_name":"chaseSpeed","_id":"bbd630ae-2c24-4a7f-8f32-828627addf43","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":16.0,"_name":"chaseSpeed","_id":"bbd630ae-2c24-4a7f-8f32-828627addf43","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_propertyPath":"ScreamJam.GhostScript.xPosition","_name":"selfX","_id":"ab8f17e5-dcc0-4612-8823-c35613b5cbca","$type":"NodeCanvas.Framework.Variable`1[[System.Single,

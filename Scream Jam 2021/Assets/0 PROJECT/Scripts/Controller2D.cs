@@ -322,10 +322,9 @@ namespace ScreamJam
                     possessedItem = Physics2D.OverlapCircle(exorciseSpot.position, data.exorciseRadius, data.itemLayerMask).gameObject;
 
                 if (possessedItem != null)
-                {
-                    //data.velocity = 0;
-                    ChangeAnimationState(exorAnim);
-                    possessedItem.GetComponent<PossessedItem>().EndPossession();
+                {                    
+                        ChangeAnimationState(exorAnim);
+                        possessedItem.GetComponent<PossessedItem>().EndPossession();
                 }
             }
         }

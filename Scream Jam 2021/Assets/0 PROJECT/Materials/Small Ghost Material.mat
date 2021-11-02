@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Small Ghost Material
   m_Shader: {fileID: 4800000, guid: 15337b42027a4714aa61b63f9e98adf4, type: 3}
-  m_ShaderKeywords: _ENABLEINNEROUTLINE_ON _ENABLEUVDISTORT_ON _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT
-    _UBERFADING_NONE
+  m_ShaderKeywords: _ENABLEFULLGLOWDISSOLVE_ON _ENABLEINNEROUTLINE_ON _ENABLEUVDISTORT_ON
+    _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT _UBERFADING_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -170,7 +170,7 @@ Material:
     - _EnableFrozen: 0
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
-    - _EnableFullGlowDissolve: 0
+    - _EnableFullGlowDissolve: 1
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0
@@ -218,7 +218,7 @@ Material:
     - _FullDistortionFade: 1
     - _FullFade: 1
     - _FullGlowDissolveFade: 1
-    - _FullGlowDissolveWidth: 0.5
+    - _FullGlowDissolveWidth: 1.2
     - _GlitchBrightness: 4
     - _GlitchFade: 1
     - _GlitchHueSpeed: 1
@@ -304,7 +304,7 @@ Material:
     - _SourceAlphaDissolveInvert: 0
     - _SourceAlphaDissolveNoiseFactor: 0.2
     - _SourceAlphaDissolveWidth: 0.2
-    - _SourceGlowDissolveFade: 1
+    - _SourceGlowDissolveFade: 0
     - _SourceGlowDissolveInvert: 0
     - _SourceGlowDissolveNoiseFactor: 0.2
     - _SourceGlowDissolveWidth: 0.1
@@ -388,8 +388,8 @@ Material:
     - _FullAlphaDissolveNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _FullDistortionDistortion: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FullDistortionNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _FullGlowDissolveEdgeColor: {r: 11.98431, g: 0.627451, b: 0.627451, a: 0}
-    - _FullGlowDissolveNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _FullGlowDissolveEdgeColor: {r: 20.35365, g: 2.534563, b: 0, a: 1}
+    - _FullGlowDissolveNoiseScale: {r: 0.05, g: 0.05, b: 0, a: 0}
     - _GlitchDistortion: {r: 0.1, g: 0, b: 0, a: 0}
     - _GlitchDistortionScale: {r: 0, g: 3, b: 0, a: 0}
     - _GlitchDistortionSpeed: {r: 0, g: 1, b: 0, a: 0}
