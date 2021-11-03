@@ -181,7 +181,6 @@ namespace ScreamJam
 
         IEnumerator<float> _GetDestroyed()
         {
-            eUpdate.Raise();
             destroying = true;
             GetComponent<CapsuleCollider2D>().enabled = false;
             visionLight.enabled = false;
@@ -204,6 +203,7 @@ namespace ScreamJam
                 sprite.material.SetFloat(glowDissolveID, Mathf.Lerp(1, 0, timer / destructionTime));
             }
 
+            eUpdate.Raise();
             Destroy(gameObject, 0);
         }
 
