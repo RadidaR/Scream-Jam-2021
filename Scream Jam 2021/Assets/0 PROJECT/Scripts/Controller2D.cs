@@ -301,6 +301,7 @@ namespace ScreamJam
             if (!canMove())
                 return;
 
+
             if (data.canStab)
             {
                 GameObject stabZone = null;
@@ -311,7 +312,9 @@ namespace ScreamJam
                 if (stabZone != null)
                 {
                     if (!wallAhead())
+                    {
                         Timing.RunCoroutine(_StabGhost(stabZone.gameObject), Segment.FixedUpdate);
+                    }
                 }
             }
             else

@@ -6,25 +6,25 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
-      value: 224247031146466b1f010f2714364d111a3b112d243c2839232e5217e7ed3b77d1e433e7e22970183c0fe00f073b0f3ad11f1a1ff9063e191000ee081eed1d5d04cb11d103
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 224247031146466b1f010f2714364d111a3b112d243c2839232e5217e7ed3b77d1e433e7e22970183c0fe00f073b0f3ad105070dff0c1f19143eef0b17fe125d04cb11d103
-      flags: 0
-    RecentlyUsedScenePath-2:
-      value: 224247031146466b1f010f2714364d111a3b112d243c2839232e5217e7ed3b77d1e433e7e22970183c0fe00f073b0f3aa02e471ef8021e12
-      flags: 0
-    RecentlyUsedScenePath-3:
       value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f0028143dcfe53a2dacf238e0f323
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-1:
       value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06576f7e93ffdfe
       flags: 0
-    RecentlyUsedScenePath-5:
+    RecentlyUsedScenePath-2:
+      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f0c3c193aedd3373dece278fce9332b25
+      flags: 0
+    RecentlyUsedScenePath-3:
+      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06376f7e93ffdfe
+      flags: 0
+    RecentlyUsedScenePath-4:
       value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06676f7e93ffdfe
       flags: 0
+    RecentlyUsedScenePath-5:
+      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06776f7e93ffdfe
+      flags: 0
     RecentlyUsedScenePath-6:
-      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f1e390f3af6e5270be1e238eca92f31352d1b
+      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06076f7e93ffdfe
       flags: 0
     RecentlyUsedScenePath-7:
       value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06176f7e93ffdfe
@@ -33,7 +33,7 @@ EditorUserSettings:
       value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06276f7e93ffdfe
       flags: 0
     RecentlyUsedScenePath-9:
-      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06376f7e93ffdfe
+      value: 224247031146460b4d3e3e0d3a067c2459241b2f222d357f012c0b36eea06c76f7e93ffdfe
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
