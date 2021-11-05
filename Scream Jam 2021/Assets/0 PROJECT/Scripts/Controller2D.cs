@@ -334,6 +334,9 @@ namespace ScreamJam
 
         IEnumerator<float> _StabGhost(GameObject stabPosition)
         {
+            if (data.stabbing)
+                yield break;
+
             data.stabbing = true;
 
             ChangeAnimationState(attackAnim);
