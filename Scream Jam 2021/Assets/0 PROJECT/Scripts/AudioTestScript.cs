@@ -15,6 +15,8 @@ namespace ScreamJam
         [SerializeField] bool isMoving;
         [SerializeField] bool wasMoving;
 
+        bool _wasUsingStairs;
+
         [SerializeField] GameData data;
         // Start is called before the first frame update
         void Start()
@@ -26,11 +28,11 @@ namespace ScreamJam
         {
             isMoving = Mathf.Abs(data.velocity) > 0.025f;
 
-            if (!wasMoving && isMoving)
+            if ((!wasMoving && isMoving) || data.usingStair /*&& !_wasUsingStairs)*/)
             {
                 MasterAudio.PlaySound(footsteps, 1);
             }
-            else if (wasMoving && !isMoving)
+            else if ((wasMoving && !isMoving) || (!data.usingStair && _wasUsingStairs))
             {
                 MasterAudio.StopAllOfSound(footsteps);
             }
@@ -39,7 +41,15 @@ namespace ScreamJam
         private void LateUpdate()
         {
             wasMoving = isMoving;
+            _wasUsingStairs = data.usingStair;
         }
+
+        public void PlaySound(string soundGroup)
+        {
+            MasterAudio.PlaySound(soundGroup);
+        }
+
+
 
     }
 }

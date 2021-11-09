@@ -464,6 +464,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &158337608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158337609}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &158337609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158337608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1939745301}
+  - {fileID: 477000646}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &167695756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,14 +720,14 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
+  randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -1524,14 +1556,14 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
+  randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -1671,6 +1703,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &477000645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477000646}
+  - component: {fileID: 477000647}
+  m_Layer: 2
+  m_Name: Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &477000646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477000645}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 158337609}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477000647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477000645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 46ce720c769fe09469ca4703fd944ba6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2014293594}
+        m_TargetAssemblyTypeName: ScreamJam.AudioTestScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: Win Level
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &548466472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,14 +1824,14 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
+  randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -1942,13 +2033,13 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: -0.71
-  randomPitchMax: 0.81
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0.5128614
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
   randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
@@ -2454,13 +2545,13 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: -0.85
-  randomPitchMax: 0.4
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0.56234133
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
   randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
@@ -2959,7 +3050,7 @@ MonoBehaviour:
   chainLoopNumLoops: 0
   useDialogFadeOut: 0
   dialogFadeOutTime: 0.5
-  curVariationSequence: 0
+  curVariationSequence: 1
   useNoRepeatRefill: 1
   useInactivePeriodPoolRefill: 0
   inactivePeriodSeconds: 5
@@ -2994,7 +3085,54 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 556
+  frames: 10511
+--- !u!1 &1205481768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205481770}
+  - component: {fileID: 1205481769}
+  m_Layer: 0
+  m_Name: Numbers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1205481769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205481768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48542d3e86934164bb2600f5ec37cf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 21
+  b: 58
+  c: 16
+  _event: {fileID: 11400000, guid: 46ce720c769fe09469ca4703fd944ba6, type: 2}
+--- !u!4 &1205481770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205481768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 92.512985, y: -45.438553, z: -313.9759}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282421013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,13 +3600,13 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: -0.49
-  randomPitchMax: 0.57
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0.46773517
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
   randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
@@ -4293,7 +4431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 2
   probabilityToPlay: 100
   importance: 5
   isUninterruptible: 0
@@ -4302,10 +4440,10 @@ MonoBehaviour:
   randomPitchMode: 0
   randomPitchMin: 0
   randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.000031622778
+  randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -4319,10 +4457,10 @@ MonoBehaviour:
   useCustomLooping: 0
   minCustomLoops: 1
   maxCustomLoops: 5
-  useRandomStartTime: 0
+  useRandomStartTime: 1
   randomStartMinPercent: 0
   randomStartMaxPercent: 0
-  randomEndPercent: 100
+  randomEndPercent: 50
   useIntroSilence: 0
   introSilenceMin: 0
   introSilenceMax: 0
@@ -6435,14 +6573,14 @@ MonoBehaviour:
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
-  useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.7
+  randomPitchMax: 1.3
+  useRandomVolume: 1
+  randomVolumeMode: 1
+  randomVolumeMin: 0.39810717
+  randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -6852,7 +6990,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783934, y: 1}
+    m_SensorSize: {x: 1.7788461, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6917,7 +7055,7 @@ MonoBehaviour:
   groupPlayType: 0
   isSelected: 0
   isExpanded: 1
-  groupMasterVolume: 1
+  groupMasterVolume: 0.07943282
   retriggerPercentage: 100
   curVariationMode: 1
   alwaysHighestPriority: 0
@@ -6970,7 +7108,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 35510
+  frames: 78105
 --- !u!4 &1876561883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 46618074296913637, guid: 8d684ed2a9aa5374786a84aaac09071a, type: 3}
@@ -7075,7 +7213,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 16177
+  frames: 16463
 --- !u!1 &1939745299
 GameObject:
   m_ObjectHideFlags: 0
@@ -7191,7 +7329,7 @@ MonoBehaviour:
   showSelectedRangeSoundGizmos: 1
   rangeGizmoColor: {r: 0, g: 1, b: 0, a: 1}
   selectedRangeGizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  showAdvancedSettings: 0
+  showAdvancedSettings: 1
   showLocalization: 0
   showVideoPlayerSettings: 0
   useTextPlaylistFilter: 0
@@ -7300,7 +7438,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939745299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7311,8 +7449,8 @@ Transform:
   - {fileID: 1202952432}
   - {fileID: 1875418866}
   - {fileID: 1681637221}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 158337609}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946902078
 GameObject:
@@ -7453,7 +7591,7 @@ MonoBehaviour:
   loopPlaylist: 1
   _playlistVolume: 1
   isMuted: 0
-  startPlaylistName: 
+  startPlaylistName: New Playlist
   syncGroupNum: -1
   ignoreListenerPause: 0
   mixerChannel: {fileID: 0}
@@ -7678,7 +7816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014293593
 GameObject:
@@ -7995,7 +8133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 0
   probabilityToPlay: 100
   importance: 5
   isUninterruptible: 0
@@ -8013,7 +8151,7 @@ MonoBehaviour:
   resourceFileName: 
   original_pitch: 0
   original_volume: 0
-  isExpanded: 1
+  isExpanded: 0
   isChecked: 1
   useFades: 0
   fadeInTime: 0

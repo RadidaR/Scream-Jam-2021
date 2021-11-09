@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb82f71772f8284eb131cf08fe70d4f, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  velocity: -0
+  velocity: 0
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -83,8 +83,8 @@ MonoBehaviour:
   canGoDown: 0
   canHide: 0
   canStab: 0
-  canExorcise: 1
-  inSight: 1
+  canExorcise: 0
+  inSight: 0
   usingStair: 0
   maxSpeed: 0
   hiding: 0
