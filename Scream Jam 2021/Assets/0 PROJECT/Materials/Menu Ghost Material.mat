@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Menu Ghost Material
   m_Shader: {fileID: 4800000, guid: 15337b42027a4714aa61b63f9e98adf4, type: 3}
-  m_ShaderKeywords: _ENABLEINNEROUTLINE_ON _ENABLEUVDISTORT_ON _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT
-    _UBERFADING_NONE
+  m_ShaderKeywords: _ENABLEINNEROUTLINE_ON _ENABLESINEMOVE_ON _ENABLEUVDISTORT_ON
+    _SHADERSPACE_UV _TIMESETTINGS_LINEAR_DEFAULT _UBERFADING_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -187,7 +187,7 @@ Material:
     - _EnableShiftHue: 0
     - _EnableShine: 0
     - _EnableSineGlow: 0
-    - _EnableSineMove: 0
+    - _EnableSineMove: 1
     - _EnableSineRotate: 0
     - _EnableSmoke: 0
     - _EnableSourceAlphaDissolve: 0
@@ -431,8 +431,8 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
     - _SineGlowColor: {r: 0, g: 2.007843, b: 2.996078, a: 0}
-    - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}
-    - _SineMoveOffset: {r: 0, g: 0.5, b: 0, a: 0}
+    - _SineMoveFrequency: {r: 1, g: 2, b: 0, a: 0}
+    - _SineMoveOffset: {r: 0, g: 0.15, b: 0, a: 0}
     - _SineRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SourceAlphaDissolveNoiseScale: {r: 0.3, g: 0.3, b: 0, a: 0}
     - _SourceAlphaDissolvePosition: {r: 0, g: 0, b: 0, a: 0}
