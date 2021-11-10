@@ -23271,6 +23271,38 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 570402399719696069, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: useRandomPitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 570402399719696069, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: useRandomStartTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 570402399719696069, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: randomStartMaxPercent
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 570402399719696069, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: randomStartMinPercent
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668158826306756621, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: frames
+      value: 2586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668158826306756621, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: copySettingsExpanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996852607803027813, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: useRandomPitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996852607803027813, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: randomVolumeMax
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3448053179592894380, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.96198606
@@ -23278,6 +23310,14 @@ PrefabInstance:
     - target: {fileID: 3448053179592894380, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.2730988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232586100591186500, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: frames
+      value: 9125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232586100591186500, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: copySettingsExpanded
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4434589757036892164, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalRotation.w

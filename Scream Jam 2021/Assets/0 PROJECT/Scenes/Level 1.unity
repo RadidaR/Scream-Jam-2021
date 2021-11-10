@@ -3424,6 +3424,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1668158826298725813, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6871503320850619768, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3998,18 +4002,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8081508439686835531, guid: 445307f16d389944f9747755806689af, type: 3}
   m_PrefabInstance: {fileID: 1204333374601446530}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1232076438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7316546258108567319, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
-  m_PrefabInstance: {fileID: 1035153437}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1232076439
+--- !u!82 &1232076444
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232076438}
+  m_GameObject: {fileID: 7316546258304597770}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -8938,6 +8937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1607af5ced69e9644bdee6eb32a74daf, type: 3}
+--- !u!1 &7316546258304597770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7316546258108567319, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
+  m_PrefabInstance: {fileID: 1035153437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7350813713550791301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6146250419001799275, guid: e8f80677461fe8f469fc5ac995bafb7c, type: 3}
