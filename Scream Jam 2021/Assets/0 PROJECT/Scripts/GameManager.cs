@@ -38,7 +38,7 @@ namespace ScreamJam
         float startingHouseLight;
         [SerializeField] float maxHouseLight;
 
-        [SerializeField] bool levelCompleted;
+        public bool levelCompleted;
         public bool levelLost;
 
         //[SerializeField] GameObject gameWonScreen;
@@ -183,7 +183,7 @@ namespace ScreamJam
         void Win()
         {
             levelCompleted = true;
-            Timing.RunCoroutine(_LevelCompleted(), Segment.LateUpdate);
+            Timing.RunCoroutine(_LevelCompleted().CancelWith(gameObject), Segment.LateUpdate);
         }
 
         IEnumerator<float> _LevelCompleted()

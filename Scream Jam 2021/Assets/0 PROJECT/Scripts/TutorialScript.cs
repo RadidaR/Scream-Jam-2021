@@ -25,11 +25,11 @@ namespace ScreamJam
             manager = GetComponent<GameManager>();
             panelImage = tutorialPanel.GetComponent<Image>();
             if (manager.currentLevel == 1)
-                Timing.RunCoroutine(_Level1(), Segment.Update);
+                Timing.RunCoroutine(_Level1().CancelWith(gameObject), Segment.Update);
             else if (manager.currentLevel == 2)
-                Timing.RunCoroutine(_Level2(), Segment.Update);
+                Timing.RunCoroutine(_Level2().CancelWith(gameObject), Segment.Update);
             else if (manager.currentLevel == 3)
-                Timing.RunCoroutine(_Level3(), Segment.Update);
+                Timing.RunCoroutine(_Level3().CancelWith(gameObject), Segment.Update);
         }
 
         private void LateUpdate()
@@ -41,7 +41,7 @@ namespace ScreamJam
         IEnumerator<float> _Level1()
         {
             tutorialText.text = tutorialOneTexts[0];
-            Timing.RunCoroutine(_PanelOn(), Segment.Update);
+            Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.Update);
 
             yield return Timing.WaitForSeconds(3f);
 
@@ -61,7 +61,7 @@ namespace ScreamJam
                     break;
             }
 
-            Timing.RunCoroutine(_PanelOff(), Segment.Update);
+            Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.Update);
 
             timer = 0f;
             while (timer < manager.levelDuration)
@@ -77,7 +77,7 @@ namespace ScreamJam
                     }
             }
 
-            Timing.RunCoroutine(_PanelOn(), Segment.Update);
+            Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.Update);
 
             timer = 0f;
             while (timer < manager.levelDuration)
@@ -89,7 +89,7 @@ namespace ScreamJam
                     break;
             }
 
-            Timing.RunCoroutine(_PanelOff(), Segment.Update);
+            Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.Update);
 
         }
         IEnumerator<float> _Level2()
@@ -97,7 +97,7 @@ namespace ScreamJam
             yield return Timing.WaitForSeconds(1);
 
             tutorialText.text = tutorialTwoTexts[0];
-            Timing.RunCoroutine(_PanelOn(), Segment.LateUpdate);
+            Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.LateUpdate);
 
             if (data.dead)
                 yield break;
@@ -122,7 +122,7 @@ namespace ScreamJam
                         break;
                 }
             }
-            Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
+            Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.LateUpdate);
 
             yield return Timing.WaitForSeconds(2);
             tutorialText.text = tutorialTwoTexts[2];
@@ -130,7 +130,7 @@ namespace ScreamJam
             if (data.dead)
                 yield break;
 
-            Timing.RunCoroutine(_PanelOn(), Segment.LateUpdate);
+            Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.LateUpdate);
 
             timer = 0;
             while (timer < manager.levelDuration)
@@ -158,14 +158,14 @@ namespace ScreamJam
 
             yield return Timing.WaitForSeconds(3);
 
-            Timing.RunCoroutine(_PanelOff(), Segment.LateUpdate);
+            Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.LateUpdate);
         }
         IEnumerator<float> _Level3()
         {
             yield return Timing.WaitForSeconds(1);
 
             tutorialText.text = tutorialThreeTexts[0];
-            Timing.RunCoroutine(_PanelOn(), Segment.Update);
+            Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.Update);
 
             float timer = 0;
             while (timer < manager.levelDuration)
@@ -215,7 +215,7 @@ namespace ScreamJam
             }
 
 
-            Timing.RunCoroutine(_PanelOff(), Segment.Update);
+            Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.Update);
 
             if (data.dead)
                 yield break;
@@ -225,11 +225,11 @@ namespace ScreamJam
             if (!data.inSight)
             {
                 tutorialText.text = tutorialThreeTexts[3];
-                Timing.RunCoroutine(_PanelOn(), Segment.Update);
+                Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.Update);
             }
 
             yield return Timing.WaitForSeconds(4f);
-            Timing.RunCoroutine(_PanelOff(), Segment.Update);
+            Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.Update);
         }
 
         IEnumerator<float> _PanelOn()

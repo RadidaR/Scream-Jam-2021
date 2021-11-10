@@ -98,6 +98,7 @@ MonoBehaviour:
   ghostLayer: 10
   stabLayer: 11
   sightLayer: 12
+  surfaceLayer: 13
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -122,6 +123,9 @@ MonoBehaviour:
   sightLayerMask:
     serializedVersion: 2
     m_Bits: 4096
+  surfaceLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
   getToStairTime: 0.2
   exorciseRadius: 4.5
   getToGhostTime: 0.2

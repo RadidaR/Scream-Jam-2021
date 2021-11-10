@@ -51,6 +51,7 @@ namespace ScreamJam
         [SerializeField] Transform spotA;
         [SerializeField] Transform spotB;
         [SerializeField] GameEvent eUpdate;
+        [SerializeField] GameEvent eGhostDestroyed;
         GameObject player;
 
         public Transform PatrolSpotA { get { return spotA; } set { } }
@@ -182,8 +183,10 @@ namespace ScreamJam
         IEnumerator<float> _GetDestroyed()
         {
             destroying = true;
+            sensor.enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             visionLight.enabled = false;
+            eGhostDestroyed.Raise();
 
             yield return Timing.WaitForOneFrame;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();

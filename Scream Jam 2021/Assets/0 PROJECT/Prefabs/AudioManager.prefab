@@ -9235,7 +9235,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 443
+  frames: 545
 --- !u!1 &1968913028308783514
 GameObject:
   m_ObjectHideFlags: 0
@@ -12622,7 +12622,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 178
+  frames: 534
 --- !u!1 &1968913028678718461
 GameObject:
   m_ObjectHideFlags: 0
@@ -14925,6 +14925,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1968913028992945004}
   - component: {fileID: 1968913028992945043}
+  - component: {fileID: 2436607753407245573}
+  - component: {fileID: 1994291109582290643}
+  - component: {fileID: 7681910319932168234}
+  - component: {fileID: 8448202263632816028}
   m_Layer: 0
   m_Name: Listener
   m_TagString: Untagged
@@ -14958,20 +14962,132 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 16e8da81e44f62f4fbad11de3f42a817, type: 2}
+  Event: {fileID: 11400000, guid: 88f4acb06948ed64aa421cf05ac54e2e, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1968913029245389044}
         m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
-        m_MethodName: FadeGroup
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Game Music
+          m_StringArgument: Level Failed
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2436607753407245573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968913028992945005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6e182deaac9e1b8408507451bbc528d1, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968913029245389044}
+        m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level Completed
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1994291109582290643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968913028992945005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: dfad2277d64b263468ad2aa72bff1adc, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968913029245389044}
+        m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ghost Destroyed
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7681910319932168234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968913028992945005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 38e0d62d4c813fa409c8cf0cc80d2d3d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968913029245389044}
+        m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: End Possession
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8448202263632816028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968913028992945005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4392411e6c24c8347a248ff7143235b7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968913029245389044}
+        m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Exorcise
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1968913029011196038
@@ -15288,7 +15404,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 851
+  frames: 915
 --- !u!1 &1968913029047182538
 GameObject:
   m_ObjectHideFlags: 0
@@ -15414,7 +15530,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 501
+  frames: 1005
 --- !u!1 &1968913029059211520
 GameObject:
   m_ObjectHideFlags: 0
@@ -17431,7 +17547,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 935
+  frames: 1092
 --- !u!1 &1968913029245389045
 GameObject:
   m_ObjectHideFlags: 0
@@ -17482,6 +17598,9 @@ MonoBehaviour:
   footstepsGroup: Footsteps
   gameplayMusicGroup: Game Music
   chaseMusicGroup: Chase Music
+  ghostsPresentGroup: Ghost
+  caughtGroup: Caught
+  _manager: {fileID: 0}
   _event: {fileID: 11400000, guid: 16e8da81e44f62f4fbad11de3f42a817, type: 2}
 --- !u!1 &1968913029275322386
 GameObject:

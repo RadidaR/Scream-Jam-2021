@@ -62,7 +62,7 @@ namespace ScreamJam
         public void GameOver()
         {
             gameOverScreen.SetActive(true);
-            Timing.RunCoroutine(_GameOver(), Segment.Update);
+            Timing.RunCoroutine(_GameOver().CancelWith(gameObject), Segment.Update);
         }
 
         IEnumerator<float> _GameOver()
@@ -95,7 +95,7 @@ namespace ScreamJam
         public void GameWon()
         {
             gameWonScreen.SetActive(true);
-            Timing.RunCoroutine(_GameWon(), Segment.Update);
+            Timing.RunCoroutine(_GameWon().CancelWith(gameObject), Segment.Update);
         }
 
         IEnumerator<float> _GameWon()

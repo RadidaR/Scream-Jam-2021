@@ -645,6 +645,7 @@ MonoBehaviour:
   spotA: {fileID: 3395948399652703073}
   spotB: {fileID: 3395948399163865518}
   eUpdate: {fileID: 11400000, guid: 1f1e61bbb20a0034b816b2d2b3c226b9, type: 2}
+  eGhostDestroyed: {fileID: 11400000, guid: dfad2277d64b263468ad2aa72bff1adc, type: 2}
   goingToA: 1
   lostTarget: 0
   target: {fileID: 0}

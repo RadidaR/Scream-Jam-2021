@@ -57,6 +57,7 @@ MonoBehaviour:
   endPositionFeedback: {fileID: 526987256880930194}
   sprite: {fileID: 526987256865073090}
   possessionEffect: {fileID: 6643797141442054595}
+  eItemExorcised: {fileID: 11400000, guid: 38e0d62d4c813fa409c8cf0cc80d2d3d, type: 2}
   possessed: 1
 --- !u!61 &526987256229755884
 BoxCollider2D:

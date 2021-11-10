@@ -115,6 +115,11 @@ namespace ScreamJam
         [LabelWidth(75)]
         public int sightLayer;
 
+        [VerticalGroup("Layers/Split/Left")]
+        [LabelText("Surface")]
+        [LabelWidth(75)]
+        public int surfaceLayer;
+
         [HideLabel]
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask groundLayerMask;
@@ -146,6 +151,10 @@ namespace ScreamJam
         [HideLabel]
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask sightLayerMask;
+
+        [HideLabel]
+        [VerticalGroup("Layers/Split/Right")]
+        public LayerMask surfaceLayerMask;
 
 
 

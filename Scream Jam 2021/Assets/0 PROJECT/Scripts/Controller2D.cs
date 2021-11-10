@@ -44,6 +44,10 @@ namespace ScreamJam
         [SerializeField] GameEvent eReveal;
         [FoldoutGroup("Events")]
         [SerializeField] GameEvent eCaught;
+        [FoldoutGroup("Events")]
+        [SerializeField] GameEvent eExorcise;
+        [FoldoutGroup("Events")]
+        [SerializeField] GameEvent eStab;
 
         [FoldoutGroup("Transforms")]
         [SerializeField] Transform exorciseSpot;
@@ -104,7 +108,7 @@ namespace ScreamJam
                 data.canHide = false;
 
             if (canMove())
-                Timing.RunCoroutine(_GroundCharacter(), Segment.FixedUpdate);
+                Timing.RunCoroutine(_GroundCharacter().CancelWith(gameObject), Segment.FixedUpdate);
         }
 
         void Update()
@@ -230,7 +234,7 @@ namespace ScreamJam
 
             if (stairCollider != null)
             {
-                Timing.RunCoroutine(_UseStairs(stairs), Segment.FixedUpdate);
+                Timing.RunCoroutine(_UseStairs(stairs).CancelWith(gameObject), Segment.FixedUpdate);
             }
 
 
@@ -313,7 +317,7 @@ namespace ScreamJam
                 {
                     if (!wallAhead())
                     {
-                        Timing.RunCoroutine(_StabGhost(stabZone.gameObject), Segment.FixedUpdate);
+                        Timing.RunCoroutine(_StabGhost(stabZone.gameObject).CancelWith(gameObject), Segment.FixedUpdate);
                     }
                 }
             }
@@ -326,8 +330,9 @@ namespace ScreamJam
 
                 if (possessedItem != null)
                 {                    
-                        ChangeAnimationState(exorAnim);
-                        possessedItem.GetComponent<PossessedItem>().EndPossession();
+                    ChangeAnimationState(exorAnim);
+                    eExorcise.Raise();
+                    possessedItem.GetComponent<PossessedItem>().EndPossession();
                 }
             }
         }
@@ -338,6 +343,7 @@ namespace ScreamJam
                 yield break;
 
             data.stabbing = true;
+            eStab.Raise();
 
             ChangeAnimationState(attackAnim);
 
@@ -368,7 +374,7 @@ namespace ScreamJam
                     return;                
 
                 if (hidingSpot != null)
-                    Timing.RunCoroutine(_Hide(hidingSpot), Segment.FixedUpdate);
+                    Timing.RunCoroutine(_Hide(hidingSpot).CancelWith(gameObject), Segment.FixedUpdate);
             }
             else
             {
@@ -429,7 +435,7 @@ namespace ScreamJam
                 if (!data.dead)
                 {
                     ChangeAnimationState(deadAnim);
-                    Timing.RunCoroutine(_Die(), Segment.Update);
+                    Timing.RunCoroutine(_Die().CancelWith(gameObject), Segment.Update);
                 }
             }
             else if (collision.gameObject.layer == data.stabLayer)
@@ -477,7 +483,7 @@ namespace ScreamJam
                 if (!data.dead)
                 {
                     ChangeAnimationState(deadAnim);
-                    Timing.RunCoroutine(_Die(), Segment.Update);
+                    Timing.RunCoroutine(_Die().CancelWith(gameObject), Segment.Update);
                 }
 
             }
@@ -528,7 +534,7 @@ namespace ScreamJam
         {
             data.dead = true;
             yield return Timing.WaitForSeconds(data.deathTime);
-            Debug.Log("here");
+            //Debug.Log("here");
             eCaught.Raise();
         }
 

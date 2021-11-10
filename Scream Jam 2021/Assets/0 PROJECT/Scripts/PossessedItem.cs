@@ -20,6 +20,8 @@ namespace ScreamJam
         [SerializeField] SpriteRenderer sprite;
         [SerializeField] SpriteRenderer possessionEffect;
 
+        [SerializeField] GameEvent eItemExorcised;
+
         public bool possessed = true;
 
         private void Awake()
@@ -39,10 +41,14 @@ namespace ScreamJam
             possessed = false;
 
             RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, 100, data.groundLayerMask);
+            RaycastHit2D surface = Physics2D.Raycast(transform.position, Vector2.down, 100, data.surfaceLayerMask);
 
-            if (ground)
+            if (surface)
+                endPositionFeedback.DestinationPosition.y = -surface.distance;
+            else if (ground)
                 endPositionFeedback.DestinationPosition.y = -ground.distance;
 
+            eItemExorcised.Raise();
             endPossessionFeedbacks.Play(transform.position, 1);
             eUpdate.Raise();
             Timing.RunCoroutine(_RemoveEffect().CancelWith(possessionEffect.gameObject), Segment.Update);

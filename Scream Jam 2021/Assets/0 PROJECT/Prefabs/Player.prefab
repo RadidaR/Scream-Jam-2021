@@ -5595,6 +5595,8 @@ MonoBehaviour:
   eHide: {fileID: 11400000, guid: d00aa550094aeb749853992d8a32384c, type: 2}
   eReveal: {fileID: 11400000, guid: 1bb488eb1815ceb458ca17df3e31087c, type: 2}
   eCaught: {fileID: 11400000, guid: 46ce720c769fe09469ca4703fd944ba6, type: 2}
+  eExorcise: {fileID: 11400000, guid: 4392411e6c24c8347a248ff7143235b7, type: 2}
+  eStab: {fileID: 11400000, guid: ad13bb89eb956874995722905940a49b, type: 2}
   exorciseSpot: {fileID: 46618075174435808}
   face: {fileID: 1440803929343519264}
 --- !u!61 &46618074296913639
