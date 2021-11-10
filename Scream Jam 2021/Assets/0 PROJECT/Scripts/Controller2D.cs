@@ -54,6 +54,8 @@ namespace ScreamJam
         [FoldoutGroup("Transforms")]
         [SerializeField] Transform face;
 
+        float _stabbingTimer = 0f;
+
         bool canMove()
         {
             if (!data.usingStair && !data.stabbing && !data.hiding && !data.dead)
@@ -114,6 +116,17 @@ namespace ScreamJam
         void Update()
         {
             data.canExorcise = Physics2D.OverlapCircle(exorciseSpot.position, data.exorciseRadius, data.itemLayerMask);
+
+            if (data.stabbing)
+            {
+                _stabbingTimer += Time.deltaTime;
+            }
+
+            if (_stabbingTimer > 1.1f)
+            {
+                data.stabbing = false;
+                _stabbingTimer = 0;
+            }
         }
 
         IEnumerator<float> _GroundCharacter()

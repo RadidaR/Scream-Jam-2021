@@ -26,6 +26,8 @@ namespace ScreamJam
         [SerializeField] GameManager _manager;
         [SerializeField] GameEvent _event;
 
+        bool _paused;
+
         bool _isMoving;
         bool _wasMoving;
 
@@ -36,6 +38,19 @@ namespace ScreamJam
         bool _wasDead;
 
         bool _wasCompleted;
+
+        public void Pause()
+        {
+            _paused = true;
+            MasterAudio.PauseEverything();
+            MasterAudio.UnpauseSoundGroup(gameplayMusicGroup);
+        }
+
+        public void Unpause()
+        {
+            _paused = false;
+            MasterAudio.UnpauseEverything();
+        }
 
         private void Start()
         {

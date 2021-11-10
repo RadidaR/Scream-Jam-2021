@@ -11794,6 +11794,8 @@ GameObject:
   - component: {fileID: 1994291109582290643}
   - component: {fileID: 7681910319932168234}
   - component: {fileID: 8448202263632816028}
+  - component: {fileID: 2054491552411018649}
+  - component: {fileID: 6792103296058618614}
   m_Layer: 0
   m_Name: Listener
   m_TagString: Untagged
@@ -11953,6 +11955,74 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Exorcise
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2054491552411018649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968913028992945005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b011ed04f2308e443adfebd11224ba55, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968913029496048938}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: PauseEverything
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1968913029496048938}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: UnpauseSoundGroup
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game Music
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6792103296058618614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968913028992945005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5387e318c9c94114db264cbb618b5ceb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968913029496048938}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: UnpauseEverything
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1968913029011196038

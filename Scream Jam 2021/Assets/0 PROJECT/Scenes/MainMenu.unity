@@ -2664,7 +2664,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 12521
+  frames: 13299
 --- !u!1 &828320597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,7 +2958,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7785059, y: 1}
+    m_SensorSize: {x: 1.7774086, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4096,11 +4096,11 @@ MonoBehaviour:
   useLocalization: 0
   useRandomPitch: 1
   randomPitchMode: 1
-  randomPitchMin: -1
+  randomPitchMin: 0.8
   randomPitchMax: 1
   useRandomVolume: 1
   randomVolumeMode: 1
-  randomVolumeMin: 0.31622776
+  randomVolumeMin: 0.5011872
   randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
@@ -6278,7 +6278,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 269
+  frames: 473
 --- !u!1 &1596821492
 GameObject:
   m_ObjectHideFlags: 0

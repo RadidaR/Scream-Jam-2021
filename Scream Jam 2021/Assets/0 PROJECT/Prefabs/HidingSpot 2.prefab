@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 8071280681584012253}
   - component: {fileID: 6878264935646292560}
   - component: {fileID: 5616962615903685694}
+  - component: {fileID: 7076233343248577472}
   m_Layer: 8
   m_Name: HidingSpot 2
   m_TagString: Untagged
@@ -714,3 +715,16 @@ MonoBehaviour:
   midValue: 0.35
   maxValue: 1
   time: 0.15
+--- !u!114 &7076233343248577472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071280681584012254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c68dfa752d34d4fa8d4072f7b9bae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 7b3dae257a75c0547aa6fca0a077bc9b, type: 2}

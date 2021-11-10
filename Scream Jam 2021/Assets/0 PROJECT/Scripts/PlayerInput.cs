@@ -51,6 +51,14 @@ namespace ScreamJam
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""1d1701d9-df33-4c6f-bd7a-23466d18a45e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -251,6 +259,28 @@ namespace ScreamJam
                     ""action"": ""Hide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1f5f2fc-b389-4f18-94fc-1f0ec43351bd"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23838f65-eaca-4eda-b103-aaa320a0da95"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -263,6 +293,7 @@ namespace ScreamJam
             m_input_UseStairs = m_input.FindAction("UseStairs", throwIfNotFound: true);
             m_input_UseCross = m_input.FindAction("UseCross", throwIfNotFound: true);
             m_input_Hide = m_input.FindAction("Hide", throwIfNotFound: true);
+            m_input_Pause = m_input.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -316,6 +347,7 @@ namespace ScreamJam
         private readonly InputAction m_input_UseStairs;
         private readonly InputAction m_input_UseCross;
         private readonly InputAction m_input_Hide;
+        private readonly InputAction m_input_Pause;
         public struct InputActions
         {
             private @PlayerInput m_Wrapper;
@@ -324,6 +356,7 @@ namespace ScreamJam
             public InputAction @UseStairs => m_Wrapper.m_input_UseStairs;
             public InputAction @UseCross => m_Wrapper.m_input_UseCross;
             public InputAction @Hide => m_Wrapper.m_input_Hide;
+            public InputAction @Pause => m_Wrapper.m_input_Pause;
             public InputActionMap Get() { return m_Wrapper.m_input; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -345,6 +378,9 @@ namespace ScreamJam
                     @Hide.started -= m_Wrapper.m_InputActionsCallbackInterface.OnHide;
                     @Hide.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnHide;
                     @Hide.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnHide;
+                    @Pause.started -= m_Wrapper.m_InputActionsCallbackInterface.OnPause;
+                    @Pause.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnPause;
+                    @Pause.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnPause;
                 }
                 m_Wrapper.m_InputActionsCallbackInterface = instance;
                 if (instance != null)
@@ -361,6 +397,9 @@ namespace ScreamJam
                     @Hide.started += instance.OnHide;
                     @Hide.performed += instance.OnHide;
                     @Hide.canceled += instance.OnHide;
+                    @Pause.started += instance.OnPause;
+                    @Pause.performed += instance.OnPause;
+                    @Pause.canceled += instance.OnPause;
                 }
             }
         }
@@ -371,6 +410,7 @@ namespace ScreamJam
             void OnUseStairs(InputAction.CallbackContext context);
             void OnUseCross(InputAction.CallbackContext context);
             void OnHide(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }

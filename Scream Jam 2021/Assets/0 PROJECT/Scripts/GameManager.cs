@@ -201,6 +201,7 @@ namespace ScreamJam
 
         public void LoadScene(int sceneNumber)
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(sceneNumber);
         }
 

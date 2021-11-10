@@ -3061,7 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db10a6d491569a8419b6f5e1bffc5243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  busIndex: -1
+  busIndex: 3
   spatialBlendType: 1
   spatialBlend: 1
   groupPlayType: 0
@@ -3114,7 +3114,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 178
+  frames: 11312
 --- !u!1 &5010487463267572157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3224,7 +3224,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 10793
+  frames: 10815
 --- !u!1 &5010487463273381680
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,13 +5837,13 @@ MonoBehaviour:
   isUninterruptible: 0
   useLocalization: 0
   useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  randomPitchMode: 1
+  randomPitchMin: 0.95
+  randomPitchMax: 1.05
   useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  randomVolumeMode: 1
+  randomVolumeMin: 0.70794576
+  randomVolumeMax: 0.000031622778
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -6464,13 +6464,13 @@ MonoBehaviour:
   isUninterruptible: 0
   useLocalization: 0
   useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  randomPitchMode: 1
+  randomPitchMin: 0.95
+  randomPitchMax: 1.05
   useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  randomVolumeMode: 1
+  randomVolumeMin: 0.70794576
+  randomVolumeMax: 0.000031622778
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -8031,13 +8031,13 @@ MonoBehaviour:
   isUninterruptible: 0
   useLocalization: 0
   useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  randomPitchMode: 1
+  randomPitchMin: 0.95
+  randomPitchMax: 1.05
   useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  randomVolumeMode: 1
+  randomVolumeMin: 0.70794576
+  randomVolumeMax: 0.000031622778
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -8051,9 +8051,9 @@ MonoBehaviour:
   useCustomLooping: 0
   minCustomLoops: 1
   maxCustomLoops: 5
-  useRandomStartTime: 0
-  randomStartMinPercent: 0
-  randomStartMaxPercent: 0
+  useRandomStartTime: 1
+  randomStartMinPercent: 9
+  randomStartMaxPercent: 9
   randomEndPercent: 100
   useIntroSilence: 0
   introSilenceMin: 0
@@ -9801,7 +9801,7 @@ MonoBehaviour:
   groupPlayType: 0
   isSelected: 0
   isExpanded: 1
-  groupMasterVolume: 1
+  groupMasterVolume: 0.70794576
   retriggerPercentage: 100
   curVariationMode: 0
   alwaysHighestPriority: 0
@@ -9852,7 +9852,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 1309
+  frames: 3332
 --- !u!1 &5010487463938693725
 GameObject:
   m_ObjectHideFlags: 0
@@ -11481,13 +11481,13 @@ MonoBehaviour:
   isUninterruptible: 0
   useLocalization: 0
   useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  randomPitchMode: 1
+  randomPitchMin: 0.95
+  randomPitchMax: 1.05
   useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  randomVolumeMode: 1
+  randomVolumeMin: 0.70794576
+  randomVolumeMax: 1
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -12311,7 +12311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 3
   probabilityToPlay: 100
   importance: 5
   isUninterruptible: 0
@@ -12331,16 +12331,16 @@ MonoBehaviour:
   original_volume: 0
   isExpanded: 1
   isChecked: 1
-  useFades: 0
-  fadeInTime: 0
-  fadeOutTime: 0
+  useFades: 1
+  fadeInTime: 0.125
+  fadeOutTime: 0.18
   useCustomLooping: 0
   minCustomLoops: 1
   maxCustomLoops: 5
-  useRandomStartTime: 0
-  randomStartMinPercent: 0
-  randomStartMaxPercent: 0
-  randomEndPercent: 100
+  useRandomStartTime: 1
+  randomStartMinPercent: 15.2
+  randomStartMaxPercent: 15.2
+  randomEndPercent: 78.3
   useIntroSilence: 0
   introSilenceMin: 0
   introSilenceMax: 0
@@ -14109,6 +14109,18 @@ MonoBehaviour:
     busColor: {r: 1, g: 1, b: 1, a: 1}
     mixerChannel: {fileID: 24300002, guid: ff05203ecc5624a4facc4644a364ff59, type: 2}
     forceTo2D: 1
+  - busName: Bookshelf
+    volume: 1
+    isSoloed: 0
+    isMuted: 0
+    voiceLimit: 1
+    isExisting: 0
+    isTemporary: 0
+    isUsingOcclusion: 0
+    busVoiceLimitExceededMode: 1
+    busColor: {r: 1, g: 1, b: 1, a: 1}
+    mixerChannel: {fileID: 24300002, guid: ff05203ecc5624a4facc4644a364ff59, type: 2}
+    forceTo2D: 0
   groupByBus: 1
   sortAlpha: 1
   showRangeSoundGizmos: 1
@@ -15594,9 +15606,9 @@ MonoBehaviour:
   useCustomLooping: 0
   minCustomLoops: 1
   maxCustomLoops: 5
-  useRandomStartTime: 0
-  randomStartMinPercent: 0
-  randomStartMaxPercent: 0
+  useRandomStartTime: 1
+  randomStartMinPercent: 9
+  randomStartMaxPercent: 9
   randomEndPercent: 100
   useIntroSilence: 0
   introSilenceMin: 0
@@ -16551,7 +16563,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 225
+  frames: 4694
 --- !u!1 &5010487464750502194
 GameObject:
   m_ObjectHideFlags: 0
@@ -17158,13 +17170,13 @@ MonoBehaviour:
   isUninterruptible: 0
   useLocalization: 0
   useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  randomPitchMode: 1
+  randomPitchMin: 0.95
+  randomPitchMax: 1.05
   useRandomVolume: 0
-  randomVolumeMode: 0
-  randomVolumeMin: 0
-  randomVolumeMax: 0
+  randomVolumeMode: 1
+  randomVolumeMin: 0.70794576
+  randomVolumeMax: 0.000031622778
   clipAlias: 
   audLocation: 0
   resourceFileName: 
@@ -17426,6 +17438,10 @@ GameObject:
   - component: {fileID: 3765440876545898520}
   - component: {fileID: 3162691357345712046}
   - component: {fileID: 3135336462199715211}
+  - component: {fileID: 3118389940363740934}
+  - component: {fileID: 289070436533655054}
+  - component: {fileID: 4583775728888581002}
+  - component: {fileID: 8731545122184927755}
   m_Layer: 0
   m_Name: Listener
   m_TagString: Untagged
@@ -17615,6 +17631,142 @@ MonoBehaviour:
           m_StringArgument: Stab
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3118389940363740934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010487464959503199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 26240b5e730639641a7f75b7e0aee2b4, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5010487464204789958}
+        m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Wardrobe
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &289070436533655054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010487464959503199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7b3dae257a75c0547aa6fca0a077bc9b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5010487464204789958}
+        m_TargetAssemblyTypeName: ScreamJam.GameplayAudioScript, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bookshelf
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4583775728888581002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010487464959503199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b011ed04f2308e443adfebd11224ba55, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5010487464456236312}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: PauseEverything
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5010487464456236312}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: UnpauseSoundGroup
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game Music
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5010487464456236312}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: UnpauseSoundGroup
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8731545122184927755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010487464959503199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6599a1dc60190439a196d6491c7b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5387e318c9c94114db264cbb618b5ceb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5010487464456236312}
+        m_TargetAssemblyTypeName: DarkTonic.MasterAudio.MasterAudio, Assembly-CSharp-firstpass
+        m_MethodName: UnpauseEverything
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5010487464968486715
 GameObject:
   m_ObjectHideFlags: 0
@@ -17718,7 +17870,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 3845
+  frames: 3893
 --- !u!1 &5010487464975919284
 GameObject:
   m_ObjectHideFlags: 0
