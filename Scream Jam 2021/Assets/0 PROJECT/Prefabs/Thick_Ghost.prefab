@@ -2201,7 +2201,7 @@ MonoBehaviour:
   stabZone: {fileID: 6798687986487017746}
   eyeLevel: {fileID: 8381692651114334529}
   destructionTime: 0.5
-  sensor: {fileID: 0}
+  sensor: {fileID: 6798687985540513284}
   state: 0
   data: {fileID: 11400000, guid: 132bcab0ab9c23c439509fdad7d5a490, type: 2}
   spotA: {fileID: 6798687985950743673}
@@ -2442,7 +2442,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.5, y: 0.69369984}
+  m_Offset: {x: -4.5, y: 0.30818272}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2453,7 +2453,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 2.8314915}
+  m_Size: {x: 12, y: 4.1165543}
   m_EdgeRadius: 0
 --- !u!1 &6798687986501529271
 GameObject:

@@ -51,7 +51,7 @@ namespace ScreamJam
         private void Awake()
         {
             Time.timeScale = 1;
-            Timing.RunCoroutine(_LevelDuration(), Segment.Update);
+            Timing.RunCoroutine(_LevelDuration().CancelWith(gameObject), Segment.Update);
             itemsTotal = FindObjectsOfType<PossessedItem>();
             ghostsTotal = FindObjectsOfType<GhostScript>();
 

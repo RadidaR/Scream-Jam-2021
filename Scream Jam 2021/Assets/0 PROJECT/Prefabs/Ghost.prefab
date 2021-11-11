@@ -242,7 +242,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34776533}
+  m_Offset: {x: 0, y: -0.26624143}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -253,7 +253,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 2.3044693}
+  m_Size: {x: 8, y: 4.097992}
   m_EdgeRadius: 0
 --- !u!1 &3395948399163865519
 GameObject:
@@ -620,7 +620,7 @@ MonoBehaviour:
     m_Bits: 2056
   TestLOSTargetsOnly: 0
   NumberOfRays: 3
-  MinimumVisibility: 0.093
+  MinimumVisibility: 0.15
   LineOfSightUpdateMode: 0
   CheckLineOfSightInterval: 1
 --- !u!114 &3395948400331450649
