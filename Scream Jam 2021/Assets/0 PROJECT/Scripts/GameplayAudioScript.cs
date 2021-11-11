@@ -12,7 +12,6 @@ namespace ScreamJam
         [SerializeField] GameData data;
         [SoundGroupAttribute][SerializeField] string footstepsGroup;
 
-
         [SoundGroupAttribute] [SerializeField] string gameplayMusicGroup;
         float _gameplayMusicDefaultVolume;
 
@@ -25,6 +24,7 @@ namespace ScreamJam
 
         [SerializeField] GameManager _manager;
         [SerializeField] GameEvent _event;
+        [SerializeField] GameObject muteCross;
 
         bool _paused;
 
@@ -38,6 +38,35 @@ namespace ScreamJam
         bool _wasDead;
 
         bool _wasCompleted;
+
+        //bool _muted;
+
+        [Button("Mute / Unmute")]
+        public void MuteUnmute()
+        {
+            if (!data.muted)
+            {
+                Mute();
+            }
+            else
+            {
+                Unmute();
+            }
+        }
+
+        void Mute()
+        {
+            data.muted = true;
+            MasterAudio.MuteEverything();
+            muteCross.SetActive(true);
+        }
+
+        void Unmute()
+        {
+            data.muted = false;
+            MasterAudio.UnmuteEverything();
+            muteCross.SetActive(false);
+        }
 
         public void Pause()
         {
@@ -54,14 +83,25 @@ namespace ScreamJam
 
         private void Start()
         {
-            PlaySound(gameplayMusicGroup);
             _gameplayMusicDefaultVolume = MasterAudio.GetGroupVolume(gameplayMusicGroup);
             _chaseMusicDefaultVolume = MasterAudio.GetGroupVolume(chaseMusicGroup);
+
+            if (data.muted)
+            {
+                Mute();
+            }
+            else
+            {
+                Unmute();
+            }
+
+            PlaySound(gameplayMusicGroup);
 
             if (_manager.ghostsLeft.Count != 0)
             {
                 PlaySound(ghostsPresentGroup);
             }
+
         }
 
         private void Update()
@@ -143,7 +183,7 @@ namespace ScreamJam
 
         public void FadeGameMusic(float time)
         {
-            MasterAudio.FadeSoundGroupToVolume(gameplayMusicGroup, 0.05f, time);
+            MasterAudio.FadeSoundGroupToVolume(gameplayMusicGroup, 0.1f, time);
         }
 
         public void RestoreGameMusic(float time)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb82f71772f8284eb131cf08fe70d4f, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  velocity: -0
+  velocity: 0
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -81,7 +81,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   canGoUp: 0
   canGoDown: 0
-  canHide: 0
+  canHide: 1
   canStab: 0
   canExorcise: 0
   inSight: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   surfaceLayerMask:
     serializedVersion: 2
     m_Bits: 8192
+  muted: 1
   getToStairTime: 0.2
   exorciseRadius: 4.5
   getToGhostTime: 0.2

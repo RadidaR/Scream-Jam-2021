@@ -17,6 +17,7 @@ namespace ScreamJam
         [SerializeField] GameObject menuButton;
         [SerializeField] GameEvent ePaused;
         [SerializeField] GameEvent eUnpaused;
+        [SerializeField] GameManager manager;
 
         private void Awake()
         {
@@ -27,6 +28,9 @@ namespace ScreamJam
 
         public void PauseUnpause()
         {
+            if (manager.levelCompleted || manager.levelLost)
+                return;
+
             if (!_paused)
             {
                 _paused = true;

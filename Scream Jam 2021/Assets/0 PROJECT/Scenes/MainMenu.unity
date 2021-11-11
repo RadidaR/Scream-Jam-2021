@@ -254,6 +254,18 @@ MonoBehaviour:
           m_StringArgument: HorrorWeen - 01 - Stem 3
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 154742456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 41263032}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1009,6 +1021,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143432577}
   m_CullTransparentMesh: 1
+--- !u!1 &154742456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2896854692479278645, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+  m_PrefabInstance: {fileID: 2896854692327829645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &154742457 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+  m_PrefabInstance: {fileID: 2896854692327829645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &213401365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1424,18 @@ MonoBehaviour:
           m_StringArgument: HorrorWeen - 01 - Stem 3
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 154742456}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 327680084}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1627,6 +1661,11 @@ MonoBehaviour:
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
   frames: 8367
+--- !u!1 &337066794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2896854691990768551, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+  m_PrefabInstance: {fileID: 2896854692327829645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &343950955
 GameObject:
   m_ObjectHideFlags: 0
@@ -8524,6 +8563,7 @@ RectTransform:
   - {fileID: 327680085}
   - {fileID: 1286986838}
   - {fileID: 1596821493}
+  - {fileID: 154742457}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8546,6 +8586,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuMusic: HorrorWeen - 01 - Stem 1
   thunder: ThunderClapWhip
+  data: {fileID: 11400000, guid: 132bcab0ab9c23c439509fdad7d5a490, type: 2}
+  muteCross: {fileID: 337066794}
 --- !u!1 &2107228123
 GameObject:
   m_ObjectHideFlags: 0
@@ -9293,6 +9335,107 @@ Transform:
   m_Father: {fileID: 566974456179876917}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2896854692327829645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2068743454}
+    m_Modifications:
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 61.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 52.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 243.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -232.9299
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278644, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278645, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_Name
+      value: MuteUnmuteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896854692479278647, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2068743455}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b09feb4ab1a9f94292b714414cfc3ca, type: 3}
 --- !u!1 &3005761346481143348
 GameObject:
   m_ObjectHideFlags: 0

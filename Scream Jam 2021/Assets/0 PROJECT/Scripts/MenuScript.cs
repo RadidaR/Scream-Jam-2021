@@ -12,6 +12,8 @@ namespace ScreamJam
     {
         [SoundGroupAttribute] public string menuMusic;
         [SoundGroupAttribute] public string thunder;
+        [SerializeField] GameData data;
+        [SerializeField] GameObject muteCross;
 
         bool coroutine = false;
         //[SerializeField] MasterAudio _audio;
@@ -23,6 +25,14 @@ namespace ScreamJam
 
         private void Start()
         {
+            if (data.muted)
+            {
+                Mute();
+            }
+            else
+            {
+                Unmute();
+            }
             PlaySound(menuMusic);
             PlaySound(thunder);
         }
@@ -43,11 +53,39 @@ namespace ScreamJam
                 Timing.RunCoroutine(_LoadSceneDelay(sceneNumber), Segment.LateUpdate);
         }
 
+
+
         IEnumerator<float> _LoadSceneDelay(int sceneNumber)
         {
             coroutine = true;
             yield return Timing.WaitForSeconds(1f);
             SceneManager.LoadScene(sceneNumber);
+        }
+
+        public void MuteUnmute()
+        {
+            if (!data.muted)
+            {
+                Mute();
+            }
+            else
+            {
+                Unmute();
+            }
+        }
+
+        void Mute()
+        {
+            data.muted = true;
+            MasterAudio.MuteEverything();
+            muteCross.SetActive(true);
+        }
+
+        void Unmute()
+        {
+            data.muted = false;
+            MasterAudio.UnmuteEverything();
+            muteCross.SetActive(false);
         }
 
     }

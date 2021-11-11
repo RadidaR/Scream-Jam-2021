@@ -37,7 +37,7 @@ namespace ScreamJam
         //int addColorID;
         //BehaviourTreeOwner ai;
         //NodeCanvas.BehaviourTrees
-        Sensor sensor;
+        [SerializeField] Sensor sensor;
 
         public GhostState state;
         public GhostState State
@@ -111,7 +111,7 @@ namespace ScreamJam
             visionLight = GetComponentInChildren<Light2D>();
             visionLightLength = visionLight.pointLightOuterRadius;
 
-            sensor = GetComponent<Sensor>();
+            //sensor = GetComponent<Sensor>();
             anim = GetComponentInChildren<Animator>();
             spotA.parent = null;
             spotB.parent = null;
@@ -184,6 +184,7 @@ namespace ScreamJam
         {
             destroying = true;
             sensor.enabled = false;
+            stabZone.enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             visionLight.enabled = false;
             eGhostDestroyed.Raise();

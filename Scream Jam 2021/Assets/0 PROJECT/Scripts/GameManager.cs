@@ -46,6 +46,7 @@ namespace ScreamJam
 
         [SerializeField] GameEvent eGameOver;
         [SerializeField] GameEvent eGameWon;
+        [SerializeField] GameEvent eStartTicking;
 
         private void Awake()
         {
@@ -84,6 +85,8 @@ namespace ScreamJam
 
         IEnumerator<float> _LevelDuration()
         {
+            bool timeAlmostGone = false;
+
             while (!levelCompleted && !levelLost)
             {
                 yield return Timing.WaitForSeconds(Time.deltaTime);
@@ -101,6 +104,11 @@ namespace ScreamJam
                     timerImage.color = midColor.LerpToColor(endColor, (percent - 0.5f) / 0.5f);
                 }
 
+                if (!timeAlmostGone && percent > 0.75f)
+                {
+                    timeAlmostGone = true;
+                    eStartTicking.Raise();
+                }
 
                 if (levelCompleted)
                     break;
@@ -162,7 +170,7 @@ namespace ScreamJam
             }
             else
             {
-                itemsText.text = $" {itemsLeft.Count} / {itemsTotal.Length}";
+                itemsText.text = $" {itemsTotal.Length - itemsLeft.Count} / {itemsTotal.Length}";
                 itemBackground.SetActive(true);
                 itemsText.gameObject.SetActive(true);
             }
@@ -174,7 +182,7 @@ namespace ScreamJam
             }
             else
             {
-                ghostsText.text = $" {ghostsLeft.Count} / {ghostsTotal.Length}";
+                ghostsText.text = $" {ghostsTotal.Length - ghostsLeft.Count} / {ghostsTotal.Length}";
                 ghostBackground.SetActive(true);
                 ghostsText.gameObject.SetActive(true);
             }

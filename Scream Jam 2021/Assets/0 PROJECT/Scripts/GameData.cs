@@ -156,6 +156,8 @@ namespace ScreamJam
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask surfaceLayerMask;
 
+        [FoldoutGroup("Audio")]
+        public bool muted;
 
 
         [FoldoutGroup("Values")]
