@@ -121,13 +121,22 @@ namespace ScreamJam
         // Update is called once per frame
         void Update()
         {
-            if (sensor.DetectedObjects.Count != 0)
+
+            if (!destroying)
             {
-                if (!data.hiding)
-                    Target = sensor.DetectedObjects[0];
+                if (Physics2D.OverlapBox(stabZone.gameObject.transform.position/* + new Vector3(stabZone.offset.x, stabZone.offset.y, 0)*/, stabZone.size, 0, data.playerLayerMask))
+                    sprite.material.SetFloat(innerOutlineID, 1);
+                else
+                    sprite.material.SetFloat(innerOutlineID, 0);
+
+                if (sensor.DetectedObjects.Count != 0)
+                {
+                    if (!data.hiding)
+                        Target = sensor.DetectedObjects[0];
+                }
+                else
+                    Target = null;
             }
-            else
-                Target = null;
 
             if (state == GhostState.Chasing)
             {
@@ -160,13 +169,6 @@ namespace ScreamJam
                 //sprite.material.SetFloat(addColorID, 0);
             }
 
-            if (!destroying)
-            {
-                if (Physics2D.OverlapBox(stabZone.gameObject.transform.position/* + new Vector3(stabZone.offset.x, stabZone.offset.y, 0)*/, stabZone.size, 0, data.playerLayerMask))
-                    sprite.material.SetFloat(innerOutlineID, 1);
-                else
-                    sprite.material.SetFloat(innerOutlineID, 0);
-            }
 
             RaycastHit2D wallAhead = Physics2D.Raycast(eyeLevel.position, Vector2.right * transform.localScale.x, visionLightLength, data.groundLayerMask);
             if (wallAhead)
@@ -187,6 +189,7 @@ namespace ScreamJam
             stabZone.enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             visionLight.enabled = false;
+            Target = null;
             eGhostDestroyed.Raise();
 
             yield return Timing.WaitForOneFrame;

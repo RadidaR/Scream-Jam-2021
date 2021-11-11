@@ -318,6 +318,8 @@ namespace ScreamJam
             if (!canMove())
                 return;
 
+            if (wallAhead())
+                return;
 
             if (data.canStab)
             {
