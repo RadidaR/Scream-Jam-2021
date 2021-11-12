@@ -305,7 +305,7 @@ namespace Ludiq.Peek
 			}
 
 			var isHovered = guiPosition.Contains(e.mousePosition);
-
+			
 			if (isDimmed && e.type == EventType.Repaint)
 			{
 				style.Draw(guiPosition, false, false, false, false);
@@ -316,7 +316,7 @@ namespace Ludiq.Peek
 			HandleDragAndDrop();
 
 			LudiqGUI.color.BeginOverride(LudiqGUI.color.value.WithAlphaMultiplied(isDimmed ? 0.5f : 1));
-
+			
 			var wantsActive = LudiqGUI.DropdownToggle(guiPosition, isActive, content, style);
 
 			if (icon != null)

@@ -486,7 +486,7 @@ namespace Ludiq.Peek
 			var delayedTooltips = ListPool<DelayedTooltip>.New();
 
 			var shortcutIndex = 1;
-
+			
 			for (var i = 0; i < toolbar.Count; i++)
 			{
 				var tool = toolbar[i];
@@ -524,7 +524,12 @@ namespace Ludiq.Peek
 				var isLast = i == toolbar.Count - 1;
 				var size = toolControl.GetSceneViewSize(isFirst, isLast);
 
+				// Note: I don't remember why in 2020 we only updated the GUI position on Repaint.
+				// But in 2021 it breaks the behaviour when clicking.
+				// I'm not removing the check before because I can't remember why I put it there.
+#if !UNITY_2021_2_OR_NEWER
 				if (e.type == EventType.Repaint)
+#endif
 				{
 					toolControl.guiPosition = new Rect
 					(
@@ -536,9 +541,9 @@ namespace Ludiq.Peek
 				}
 
 				x = toolControl.guiPosition.xMax;
-
+				
 				var delayedTooltip = toolControl.DrawInSceneView(isFirst && !isDraggable, isLast);
-
+				
 				if (delayedTooltip.HasValue)
 				{
 					delayedTooltips.Add(delayedTooltip.Value);
