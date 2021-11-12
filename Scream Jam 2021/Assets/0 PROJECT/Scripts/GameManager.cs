@@ -37,6 +37,7 @@ namespace ScreamJam
         float startingDaylight;
         float startingHouseLight;
         [SerializeField] float maxHouseLight;
+        [SerializeField] float maxDayLight;
 
         public bool levelCompleted;
         public bool levelLost;
@@ -93,7 +94,7 @@ namespace ScreamJam
                 currentTime += Time.deltaTime;
                 float percent = currentTime / levelDuration;
 
-                dayLight.intensity = Mathf.Lerp(startingDaylight, 1, percent);
+                dayLight.intensity = Mathf.Lerp(startingDaylight, maxDayLight, percent);
                 houseLight.intensity = Mathf.Lerp(startingHouseLight, maxHouseLight, percent);
                 timerImage.fillAmount = Mathf.Lerp(1, 0, percent);
 
