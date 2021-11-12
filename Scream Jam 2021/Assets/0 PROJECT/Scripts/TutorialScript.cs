@@ -34,7 +34,7 @@ namespace ScreamJam
 
         private void LateUpdate()
         {
-            if (data.dead || manager.levelLost)
+            if (data.dead || manager.levelLost || manager.levelCompleted)
                 Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.Update);
         }
 
@@ -108,8 +108,11 @@ namespace ScreamJam
                 yield return Timing.WaitForSeconds(Time.deltaTime);
                 timer += Time.deltaTime;
 
-                if (data.dead)
+                if (data.dead || manager.levelCompleted)
+                {
+                    Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.LateUpdate);
                     yield break;
+                }
 
                 if (tutorialText.text != tutorialTwoTexts[1])
                 {
@@ -127,8 +130,11 @@ namespace ScreamJam
             yield return Timing.WaitForSeconds(2);
             tutorialText.text = tutorialTwoTexts[2];
 
-            if (data.dead)
+            if (data.dead || manager.levelCompleted)
+            {
+                Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.LateUpdate);
                 yield break;
+            }
 
             Timing.RunCoroutine(_PanelOn().CancelWith(gameObject), Segment.LateUpdate);
 
@@ -153,8 +159,11 @@ namespace ScreamJam
                 }
             }
 
-            if (data.dead)
+            if (data.dead || manager.levelCompleted)
+            {
+                Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.LateUpdate);
                 yield break;
+            }
 
             yield return Timing.WaitForSeconds(3);
 
