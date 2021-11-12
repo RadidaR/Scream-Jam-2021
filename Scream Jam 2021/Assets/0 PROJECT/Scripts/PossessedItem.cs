@@ -66,7 +66,7 @@ namespace ScreamJam
                 if (possessionEffect.gameObject.transform.localScale.x <= 0.75f)
                     break;
             }
-
+            possessionEffect.gameObject.SetActive(false);
             possessionEffect.enabled = false;
         }
     }

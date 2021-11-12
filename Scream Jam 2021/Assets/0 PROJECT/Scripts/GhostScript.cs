@@ -30,7 +30,7 @@ namespace ScreamJam
         int innerOutlineID;
         int glowDissolveID;
 
-        bool destroying;
+        public bool destroying;
         [SerializeField] float destructionTime;
 
 
@@ -69,11 +69,11 @@ namespace ScreamJam
 
         public bool hasTarget
         {
-            get 
+            get
             {
                 if (target != null)
                     return true;
-                else 
+                else
                     return false;
             }
         }
@@ -150,10 +150,10 @@ namespace ScreamJam
             }
             else
             {
-                    if (goingToA)
-                        ChangeDirection(spotA.position);
-                    else
-                        ChangeDirection(spotB.position);
+                if (goingToA)
+                    ChangeDirection(spotA.position);
+                else
+                    ChangeDirection(spotB.position);
             }
 
             if (hasTarget)
@@ -169,12 +169,16 @@ namespace ScreamJam
                 //sprite.material.SetFloat(addColorID, 0);
             }
 
-
-            RaycastHit2D wallAhead = Physics2D.Raycast(eyeLevel.position, Vector2.right * transform.localScale.x, visionLightLength, data.groundLayerMask);
-            if (wallAhead)
-                visionLight.pointLightOuterRadius = wallAhead.distance;
+            if (wallAhead())
+                visionLight.pointLightOuterRadius = wallAhead().distance;
             else
                 visionLight.pointLightOuterRadius = visionLightLength;
+
+        }
+
+        RaycastHit2D wallAhead()
+        {
+            return Physics2D.Raycast(eyeLevel.position, Vector2.right* transform.localScale.x, visionLightLength, data.groundLayerMask);
         }
 
         public void DestroyGhost()

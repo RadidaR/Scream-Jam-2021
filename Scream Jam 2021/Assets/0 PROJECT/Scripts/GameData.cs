@@ -120,6 +120,11 @@ namespace ScreamJam
         [LabelWidth(75)]
         public int surfaceLayer;
 
+        [VerticalGroup("Layers/Split/Left")]
+        [LabelText("Render")]
+        [LabelWidth(75)]
+        public int renderLayer;
+
         [HideLabel]
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask groundLayerMask;
@@ -155,6 +160,10 @@ namespace ScreamJam
         [HideLabel]
         [VerticalGroup("Layers/Split/Right")]
         public LayerMask surfaceLayerMask;
+
+        [HideLabel]
+        [VerticalGroup("Layers/Split/Right")]
+        public LayerMask renderLayerMask;
 
         [FoldoutGroup("Audio")]
         public bool muted;

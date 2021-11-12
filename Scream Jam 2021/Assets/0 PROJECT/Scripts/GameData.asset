@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb82f71772f8284eb131cf08fe70d4f, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  velocity: 0
+  velocity: -0.010666959
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -81,13 +81,13 @@ MonoBehaviour:
     m_RotationOrder: 4
   canGoUp: 0
   canGoDown: 0
-  canHide: 1
+  canHide: 0
   canStab: 0
   canExorcise: 0
   inSight: 0
   usingStair: 0
-  maxSpeed: 0
-  hiding: 0
+  maxSpeed: 1
+  hiding: 1
   stabbing: 0
   dead: 0
   groundLayer: 3
@@ -99,6 +99,7 @@ MonoBehaviour:
   stabLayer: 11
   sightLayer: 12
   surfaceLayer: 13
+  renderLayer: 14
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -126,7 +127,10 @@ MonoBehaviour:
   surfaceLayerMask:
     serializedVersion: 2
     m_Bits: 8192
-  muted: 1
+  renderLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  muted: 0
   getToStairTime: 0.2
   exorciseRadius: 4.5
   getToGhostTime: 0.2

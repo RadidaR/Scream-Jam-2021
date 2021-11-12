@@ -313,6 +313,12 @@ Transform:
   - {fileID: 904681011}
   - {fileID: 41404216}
   - {fileID: 1802093540}
+  - {fileID: 1667482718}
+  - {fileID: 1370485344}
+  - {fileID: 775324250}
+  - {fileID: 1753343350}
+  - {fileID: 454393533}
+  - {fileID: 548512460}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -771,7 +777,7 @@ PrefabInstance:
       propertyPath: _serializedBlackboard
       value: '{"_variables":{"hasTarget":{"_propertyPath":"ScreamJam.GhostScript.hasTarget","_name":"hasTarget","_id":"cdc56ccc-5989-4408-9247-9a23ab918a6f","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Target":{"_propertyPath":"ScreamJam.GhostScript.Target","_name":"Target","_id":"aaad7709-eb1b-4991-baa4-ad700c3d77ce","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"chaseSpeed":{"_value":14.0,"_name":"chaseSpeed","_id":"bbd630ae-2c24-4a7f-8f32-828627addf43","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"chaseSpeed":{"_value":13.5,"_name":"chaseSpeed","_id":"bbd630ae-2c24-4a7f-8f32-828627addf43","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"selfX":{"_propertyPath":"ScreamJam.GhostScript.xPosition","_name":"selfX","_id":"ab8f17e5-dcc0-4612-8823-c35613b5cbca","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"goingToA":{"_propertyPath":"ScreamJam.GhostScript.GoingToA","_name":"goingToA","_id":"2fe5e11c-08d4-4f32-8fe2-1c395e883143","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"PatrolSpotA":{"_propertyPath":"ScreamJam.GhostScript.PatrolSpotA","_name":"PatrolSpotA","_id":"c3484dc1-7c68-4567-83d8-0b2c09c669da","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
@@ -1531,12 +1537,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454393531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.56, y: -0.99, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 69.54855, y: -22.522264, z: 0}
   m_LocalScale: {x: 0.74757, y: 0.74757, z: 0.74757}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 116465299}
+  m_RootOrder: 84
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &454471188
 PrefabInstance:
@@ -6935,12 +6941,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548512458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99.2, y: -0.99, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 71.18855, y: -22.522264, z: 0}
   m_LocalScale: {x: 0.74757, y: 0.74757, z: 0.74757}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 116465299}
+  m_RootOrder: 85
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &572527895
 PrefabInstance:
@@ -9712,12 +9718,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775324248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 95.72311, y: 2.1713305, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 67.71167, y: -19.360935, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 116465299}
+  m_RootOrder: 82
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782760872
 GameObject:
@@ -16964,12 +16970,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370485342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.65, y: 2.08, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.661438, y: -19.452265, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 116465299}
+  m_RootOrder: 81
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1378225934
 PrefabInstance:
@@ -22907,12 +22913,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667482716}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.079716, y: 1.02, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -49.091156, y: -20.512264, z: 0}
   m_LocalScale: {x: 0.68635, y: 0.68635, z: 0.68635}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 116465299}
+  m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1704843202
 PrefabInstance:
@@ -23072,11 +23078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316546258108567306, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.452896
+      value: 10.407902
       objectReference: {fileID: 0}
     - target: {fileID: 7316546258108567306, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.545879
+      value: 13.54575
       objectReference: {fileID: 0}
     - target: {fileID: 7316546258108567317, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: orthographic size
@@ -23552,12 +23558,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753343348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 95.35, y: -1.07, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 67.33856, y: -22.602264, z: 0}
   m_LocalScale: {x: 0.74757, y: 0.74757, z: 0.74757}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 116465299}
+  m_RootOrder: 83
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1773971496
 PrefabInstance:
