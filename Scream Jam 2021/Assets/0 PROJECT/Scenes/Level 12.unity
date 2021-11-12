@@ -10683,7 +10683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 124878100942086177, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_Intensity
-      value: 0.125
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3448053179592894380, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10795,7 +10795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316546258055699759, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: maxHouseLight
-      value: 0.125
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7316546258108567306, guid: 624a71d68c15f8247b12c2761890668e, type: 3}
       propertyPath: m_LocalPosition.x
