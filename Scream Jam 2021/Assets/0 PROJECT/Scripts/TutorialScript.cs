@@ -35,7 +35,7 @@ namespace ScreamJam
         private void LateUpdate()
         {
             if (data.dead || manager.levelLost)
-                Timing.RunCoroutine(_PanelOff(), Segment.Update);
+                Timing.RunCoroutine(_PanelOff().CancelWith(gameObject), Segment.Update);
         }
 
         IEnumerator<float> _Level1()
@@ -246,6 +246,7 @@ namespace ScreamJam
             }
             panelImage.color = panelImage.color.SetAlpha(a: 1);
         }
+
         IEnumerator<float> _PanelOff()
         {
             panelImage.color = panelImage.color.SetAlpha(a: 1);
