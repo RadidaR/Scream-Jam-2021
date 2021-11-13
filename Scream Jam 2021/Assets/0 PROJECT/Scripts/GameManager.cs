@@ -221,7 +221,14 @@ namespace ScreamJam
 
         public void NextLevel()
         {
-            LoadScene(currentLevel + 1);
+            if (currentLevel != 12)
+            {
+                LoadScene(currentLevel + 1);
+            }
+            else
+            {
+                LoadScene(0);
+            }
         }
     }
 }
